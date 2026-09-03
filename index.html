@@ -1,0 +1,652 @@
+<title>오사카 4박5일 가성비 플랜</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap');
+
+:root{
+  --paper:#F7F5F2; --card:#FFFFFF; --sunk:#F1EDE8;
+  --ink:#191512; --ink-2:#5C534B; --ink-3:#8E837A;
+  --line:#E3DDD5; --line-2:#CEC5B9;
+  --accent:#C82A26; --accent-soft:#FBEBE9; --accent-ink:#9E1F1C;
+  --green:#1D7A56; --green-soft:#E8F2ED;
+  --gold:#8A6A1F; --gold-soft:#F7F0DE;
+  --l-nankai:#0068B7; --l-mido:#C82A26; --l-hankyu:#7C2E38; --l-sakai:#7E4E24; --l-chuo:#017A52;
+  --shadow:0 1px 2px rgba(25,21,18,.05), 0 8px 24px -14px rgba(25,21,18,.22);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141210; --card:#1D1A17; --sunk:#221E1A;
+    --ink:#F1ECE6; --ink-2:#B6ADA3; --ink-3:#898077;
+    --line:#2E2A25; --line-2:#413A33;
+    --accent:#FF7268; --accent-soft:#31201E; --accent-ink:#FF8F86;
+    --green:#5FC79B; --green-soft:#16261F;
+    --gold:#D9B160; --gold-soft:#2A2317;
+    --l-nankai:#4FA3E0; --l-mido:#FF7268; --l-hankyu:#C4707C; --l-sakai:#BE8F5E; --l-chuo:#4CBE92;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141210; --card:#1D1A17; --sunk:#221E1A;
+  --ink:#F1ECE6; --ink-2:#B6ADA3; --ink-3:#898077;
+  --line:#2E2A25; --line-2:#413A33;
+  --accent:#FF7268; --accent-soft:#31201E; --accent-ink:#FF8F86;
+  --green:#5FC79B; --green-soft:#16261F;
+  --gold:#D9B160; --gold-soft:#2A2317;
+  --l-nankai:#4FA3E0; --l-mido:#FF7268; --l-hankyu:#C4707C; --l-sakai:#BE8F5E; --l-chuo:#4CBE92;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'IBM Plex Sans KR','Malgun Gothic',sans-serif;
+  font-weight:300; font-size:16px; line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px 96px}
+h1,h2,h3,h4{font-family:'Hahmlet','Nanum Myeongjo',serif; font-weight:600; text-wrap:balance; margin:0; line-height:1.3}
+p{margin:0}
+a{color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:3px}
+
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:.7rem; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3);
+}
+
+/* ---------- masthead ---------- */
+.mast{padding:64px 0 32px; border-bottom:1px solid var(--line)}
+.mast h1{font-size:clamp(2.4rem,6vw,3.9rem); font-weight:800; letter-spacing:-.02em}
+.mast h1 em{font-style:normal; color:var(--accent)}
+.mast .sub{margin-top:14px; color:var(--ink-2); font-size:1.05rem; max-width:62ch}
+.facts{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
+.fact{
+  display:inline-flex; align-items:baseline; gap:8px; padding:6px 12px;
+  background:var(--card); border:1px solid var(--line); border-radius:999px; font-size:.85rem;
+}
+.fact b{font-weight:500}
+.fact span{color:var(--ink-3); font-size:.75rem; letter-spacing:.06em}
+
+/* ---------- rate bar ---------- */
+.ratebar{
+  position:sticky; top:0; z-index:20; margin:0 -24px; padding:12px 24px;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 22px;
+}
+.ratebar label{font-size:.82rem; color:var(--ink-2); display:flex; align-items:center; gap:8px}
+.ratebar input{
+  width:78px; padding:5px 9px; border:1px solid var(--line-2); border-radius:6px;
+  background:var(--card); color:var(--ink);
+  font-family:'IBM Plex Mono',monospace; font-size:.9rem; font-weight:500; text-align:right;
+}
+.ratebar .live{margin-left:auto; font-size:.82rem; color:var(--ink-3)}
+.ratebar .live b{color:var(--ink); font-weight:500}
+
+/* ---------- money ---------- */
+.cost{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; font-weight:500; white-space:nowrap}
+.krw{color:var(--ink-3); font-weight:400; font-size:.85em; margin-left:.35em}
+
+/* ---------- headline tiles ---------- */
+.tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin:40px 0 8px;
+  background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.tile{background:var(--card); padding:22px 20px 20px}
+.tile .k{font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3)}
+.tile .v{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;
+  font-size:clamp(1.5rem,3.6vw,2.05rem); font-weight:600; letter-spacing:-.02em; margin-top:6px; line-height:1.15}
+.tile.hero .v{color:var(--accent)}
+.tile .n{font-size:.78rem; color:var(--ink-3); margin-top:4px}
+.tilenote{font-size:.78rem; color:var(--ink-3); margin-top:10px}
+
+/* ---------- sections ---------- */
+section{margin-top:64px}
+.shead{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:20px}
+.shead h2{font-size:1.55rem}
+.shead .note{font-size:.85rem; color:var(--ink-3)}
+
+/* ---------- principles ---------- */
+.rules{display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:0 34px}
+.rule{padding:18px 0; border-top:1px solid var(--line)}
+.rule h3{font-size:1rem; display:flex; gap:10px; align-items:baseline}
+.rule h3 .no{font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--accent); font-weight:600; letter-spacing:.05em}
+.rule p{font-size:.9rem; color:var(--ink-2); margin-top:6px; padding-left:calc(.75rem + 14px)}
+.rule .save{color:var(--green); font-weight:500}
+
+/* ---------- tables ---------- */
+.tblwrap{overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:var(--card)}
+table{border-collapse:collapse; width:100%; min-width:520px; font-size:.9rem}
+th,td{padding:11px 16px; text-align:left; border-bottom:1px solid var(--line)}
+thead th{
+  font-family:'IBM Plex Mono',monospace; font-size:.7rem; font-weight:500; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-3); background:var(--sunk); border-bottom:1px solid var(--line-2);
+}
+td.num,th.num{text-align:right; font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tr.total td{background:var(--sunk); font-weight:500; border-top:1px solid var(--line-2)}
+tr.total td.num{font-size:1rem}
+td .sub{display:block; font-size:.78rem; color:var(--ink-3); line-height:1.5}
+.pick{color:var(--green); font-weight:500}
+.skip{color:var(--ink-3); text-decoration:line-through}
+
+.seg{display:inline-flex; border:1px solid var(--line-2); border-radius:999px; overflow:hidden; background:var(--card)}
+.seg button{
+  appearance:none; border:0; background:transparent; color:var(--ink-2); cursor:pointer;
+  font-family:'IBM Plex Sans KR',sans-serif; font-size:.8rem; padding:5px 15px;
+}
+.seg button[aria-pressed="true"]{background:var(--accent); color:#fff}
+
+/* ---------- days ---------- */
+.day{border-top:1px solid var(--line-2); padding-top:26px; margin-top:44px}
+.day:first-of-type{margin-top:0}
+.dhead{display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:22px}
+.dnum{
+  font-family:'IBM Plex Mono',monospace; font-size:.72rem; font-weight:600; letter-spacing:.1em;
+  color:#fff; background:var(--rail); padding:4px 10px; border-radius:4px; white-space:nowrap; margin-top:5px;
+}
+.dtitle h3{font-size:1.3rem}
+.dtitle .meta{font-size:.85rem; color:var(--ink-3); margin-top:3px}
+.dtitle .meta .lineTag{color:var(--rail); font-weight:500}
+.dcost{margin-left:auto; text-align:right; font-size:.8rem; color:var(--ink-3); padding-top:4px}
+.dcost .cost{display:block; font-size:1.05rem; color:var(--ink)}
+
+.tt{display:grid; grid-template-columns:4.6rem 1fr; gap:0; border-left:2px solid var(--rail); padding-left:0}
+.tt .t{
+  font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; font-size:.85rem;
+  color:var(--ink-3); padding:12px 14px 12px 16px; border-bottom:1px solid var(--line);
+}
+.tt .c{padding:12px 0 14px; border-bottom:1px solid var(--line)}
+.tt .t:last-of-type, .tt .c:last-of-type{border-bottom:none}
+.tt .c h4{font-size:.98rem; font-weight:600; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.tt .c p{font-size:.88rem; color:var(--ink-2); margin-top:4px; max-width:66ch}
+.tag{
+  font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.06em; font-weight:500;
+  padding:2px 7px; border-radius:4px; background:var(--sunk); color:var(--ink-3); white-space:nowrap;
+}
+.tag.free{background:var(--green-soft); color:var(--green)}
+.tag.pass{background:var(--accent-soft); color:var(--accent-ink)}
+.tip{
+  margin-top:8px; font-size:.84rem; color:var(--green); background:var(--green-soft);
+  border-radius:6px; padding:7px 11px; display:inline-block;
+}
+.alt{
+  margin-top:18px; padding:14px 16px; background:var(--sunk); border-radius:8px;
+  border-left:3px solid var(--line-2); font-size:.86rem; color:var(--ink-2);
+}
+.alt b{color:var(--ink); font-weight:500}
+
+/* ---------- checklist ---------- */
+.cols2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:26px 40px}
+.panel{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px 22px 22px; box-shadow:var(--shadow)}
+.panel h3{font-size:1.05rem; margin-bottom:12px}
+.panel ul{margin:0; padding-left:1.1rem; font-size:.89rem; color:var(--ink-2)}
+.panel li{margin-bottom:7px}
+.panel li b{color:var(--ink); font-weight:500}
+.check{list-style:none; padding:0; margin:0}
+.check li{margin:0; border-bottom:1px dashed var(--line)}
+.check label{display:flex; gap:11px; align-items:flex-start; padding:9px 2px; cursor:pointer; font-size:.89rem}
+.check input{margin-top:.42em; accent-color:var(--accent); flex:none}
+.check input:checked + span{color:var(--ink-3); text-decoration:line-through}
+.check li:last-child{border-bottom:none}
+
+footer{margin-top:72px; padding-top:22px; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-3)}
+footer p+p{margin-top:6px}
+
+@media (max-width:640px){
+  .tiles{grid-template-columns:1fr}
+  .tt{grid-template-columns:3.9rem 1fr}
+  .tt .t{padding-left:12px; padding-right:8px; font-size:.8rem}
+  .dcost{margin-left:0; text-align:left}
+  .mast{padding-top:40px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">2027.01.23 SAT — 01.27 WED · 4박 5일 · 성인 4명</div>
+    <h1>오사카 <em>가성비</em> 4박 5일</h1>
+    <p class="sub">라피트 대신 공항급행, 주유패스는 딱 하루만, 숙소는 4인 1실. 아낄 곳과 쓸 곳을 나눈 겨울 오사카 일정입니다. 모든 금액은 <b class="mono">100엔 = 870원</b> 기준이며, 위 환율 칸을 바꾸면 원화가 전부 다시 계산됩니다.</p>
+    <div class="facts">
+      <div class="fact"><span>거점</span><b>난바 · 닛폰바시</b></div>
+      <div class="fact"><span>공항</span><b>간사이(KIX)</b></div>
+      <div class="fact"><span>1월 기온</span><b>3 – 9℃</b></div>
+      <div class="fact"><span>당일치기</span><b>교토 1일</b></div>
+    </div>
+  </header>
+
+  <div class="ratebar">
+    <label for="rate">기준환율 100엔 = <input id="rate" type="number" value="870" min="500" max="1500" step="5" inputmode="numeric"> 원</label>
+    <span class="live">1엔 = <b id="perYen" class="mono">8.70원</b> · 4인 총액 <b id="liveTotal" class="mono">—</b></span>
+  </div>
+
+  <div class="tiles">
+    <div class="tile hero">
+      <div class="k">1인 총예산</div>
+      <div class="v" id="tPer">—</div>
+      <div class="n">항공 · 숙소 · 교통 · 식비 · 쇼핑 포함</div>
+    </div>
+    <div class="tile">
+      <div class="k">4인 합계</div>
+      <div class="v" id="tAll">—</div>
+      <div class="n">현지 엔화 지출 <span class="mono">¥264,960</span> + 원화 결제분</div>
+    </div>
+    <div class="tile">
+      <div class="k">1인 1일 현지비</div>
+      <div class="v" id="tDay">—</div>
+      <div class="n">숙소 · 교통 · 식사 · 입장료 (5일 평균)</div>
+    </div>
+  </div>
+  <p class="tilenote">항공권과 보험은 원화로 결제하므로 환율을 바꿔도 고정입니다. 환율에 따라 움직이는 건 현지 엔화 지출뿐입니다.</p>
+
+  <section>
+    <div class="shead"><h2>돈을 아끼는 여섯 가지 결정</h2><span class="note">이 여섯 개가 1인 15만원 차이를 만듭니다</span></div>
+    <div class="rules">
+      <div class="rule">
+        <h3><span class="no">01</span> 라피트를 타지 않는다</h3>
+        <p>난카이 <b>공항급행 <span class="cost" data-yen="970">¥970</span></b>는 라피트(<span class="cost" data-yen="1490">¥1,490</span>)보다 10분 느릴 뿐입니다. 4명 왕복이면 <span class="save"><span class="cost" data-yen="4160">¥4,160</span> 절약</span> — 하루 저녁 식사값입니다.</p>
+      </div>
+      <div class="rule">
+        <h3><span class="no">02</span> 주유패스는 Day 2 하루만</h3>
+        <p>1일권 <span class="cost" data-yen="3500">¥3,500</span>로 오사카성 · 우메다 공중정원 · 헵파이브 · 크루즈를 몰아 타면 <span class="cost" data-yen="5200">¥5,200</span>어치. 다른 날은 볼거리가 흩어져 있어 사면 손해입니다.</p>
+      </div>
+      <div class="rule">
+        <h3><span class="no">03</span> 4인 1실 아파트먼트</h3>
+        <p>트윈 2실(1박 <span class="cost" data-yen="30000">¥30,000</span>)보다 4인 아파트먼트 1실(<span class="cost" data-yen="22000">¥22,000</span>)이 <span class="save">4박 <span class="cost" data-yen="32000">¥32,000</span> 저렴</span>. 세탁기와 주방까지 딸려 옵니다.</p>
+      </div>
+      <div class="rule">
+        <h3><span class="no">04</span> 아침은 편의점, 저녁은 하루만</h3>
+        <p>조식 <span class="cost" data-yen="500">¥500</span>(편의점) · 중식 <span class="cost" data-yen="1100">¥1,100</span>(로컬 정식) · 석식 <span class="cost" data-yen="2000">¥2,000</span>. 제대로 된 저녁은 Day 4 야키니쿠 한 번으로 몰아줍니다.</p>
+      </div>
+      <div class="rule">
+        <h3><span class="no">05</span> 면세는 한 매장에 몰아서</h3>
+        <p>같은 날 같은 매장 <span class="cost" data-yen="5000">¥5,000</span> 이상이어야 면세. 돈키호테 에비스타워에서 4명 것을 한 번에 계산하세요. <b>여권 실물 필수.</b></p>
+      </div>
+      <div class="rule">
+        <h3><span class="no">06</span> 현금은 3만 엔만</h3>
+        <p>나머지는 트래블카드로. 다만 <b>구로몬 시장 노점 · 쿠시카츠 골목 · 코인락커</b>는 여전히 현금이 빠릅니다. 1인 <span class="cost" data-yen="30000">¥30,000</span>가 적정선.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><h2>교통 — 무엇을 사고 무엇을 사지 않을까</h2><span class="note">전부 1인 기준</span></div>
+    <div class="tblwrap">
+      <table>
+        <thead>
+          <tr><th>구간 / 패스</th><th>선택</th><th class="num">요금</th><th>판단</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>간사이공항 ↔ 난바<span class="sub">Day 1 · Day 5</span></td>
+            <td class="pick">난카이 공항급행 (45분)</td>
+            <td class="num"><span class="cost" data-yen="970">¥970</span> ×2</td>
+            <td>라피트 <span class="skip">¥1,490</span> · 리무진버스 <span class="skip">¥1,300</span></td>
+          </tr>
+          <tr>
+            <td>Day 2 시내 관광<span class="sub">오사카성 · 우메다</span></td>
+            <td class="pick">오사카 주유패스 1일권</td>
+            <td class="num"><span class="cost" data-yen="3500">¥3,500</span></td>
+            <td>입장료만 <span class="cost" data-yen="5200">¥5,200</span> + 지하철 무제한</td>
+          </tr>
+          <tr>
+            <td>Day 3 교토 왕복<span class="sub">난바 → 우메다 → 카와라마치</span></td>
+            <td class="pick">지하철 + 한큐 교토선</td>
+            <td class="num"><span class="cost" data-yen="1300">¥1,300</span></td>
+            <td>JR 신쾌속 <span class="skip">¥1,640</span>보다 저렴</td>
+          </tr>
+          <tr>
+            <td>Day 4 시내 이동<span class="sub">시텐노지 · 신세카이 · 텐노지</span></td>
+            <td class="pick">ICOCA 개별 승차 (3–4회)</td>
+            <td class="num"><span class="cost" data-yen="800">¥800</span></td>
+            <td>엔조이 에코카드 평일 <span class="skip">¥820</span>은 본전 어려움</td>
+          </tr>
+          <tr>
+            <td>Day 1 · 5 자투리<span class="sub">도보권 위주</span></td>
+            <td class="pick">도보 + 1–2회 승차</td>
+            <td class="num"><span class="cost" data-yen="700">¥700</span></td>
+            <td>숙소가 도톤보리 도보 10분이면 대부분 걷습니다</td>
+          </tr>
+          <tr class="total">
+            <td>교통비 소계</td><td>ICOCA 보증금 별도</td>
+            <td class="num"><span class="cost" data-yen="8240">¥8,240</span></td>
+            <td>4인 <span class="cost" data-yen="32960">¥32,960</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alt"><b>ICOCA 카드</b> — 간사이공항 역에서 발급. 보증금 ¥500(반납 시 환급)에 충전액 ¥2,000 정도면 5일 내내 충분합니다. 애플페이 사용자는 실물 없이 아이폰 지갑에 바로 발급하는 편이 빠릅니다.</div>
+  </section>
+
+  <section>
+    <div class="shead"><h2>숙소 — 왜 난바·닛폰바시인가</h2></div>
+    <div class="cols2">
+      <div class="panel">
+        <h3>추천: 닛폰바시 4인 아파트먼트</h3>
+        <ul>
+          <li><b>1박 <span class="cost" data-yen="22000">¥22,000</span></b> (4인 전체) × 4박 = <span class="cost" data-yen="88000">¥88,000</span> → 1인 <span class="cost" data-yen="22000">¥22,000</span></li>
+          <li><b>난카이 난바역 직결</b> — 공항에서 환승 0회. 캐리어 4개를 끌고 갈아타지 않아도 됩니다.</li>
+          <li><b>구로몬 시장 도보 5분</b> — 아침 식재료와 야식을 걸어서 해결</li>
+          <li><b>미도스지선 · 센니치마에선 교차</b> — 우메다 9분, 텐노지 8분</li>
+          <li>세탁기 있으면 겨울 옷 짐을 절반으로 줄일 수 있습니다</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>바꾼다면</h3>
+        <ul>
+          <li><b>텐노지</b> — 같은 등급이 1박 <span class="cost" data-yen="4000">¥4,000</span> 정도 쌉니다. Day 4 동선과 겹치고 JR 접근도 좋지만, 밤에 도톤보리에서 돌아오는 길이 한 정거장 더 멉니다.</li>
+          <li><b>우메다</b> — 교토·고베 접근은 최고지만 같은 방이 <span class="cost" data-yen="6000">¥6,000</span>쯤 비쌉니다. 가성비 기준에선 탈락.</li>
+          <li><b>예약 시점</b> — 1월 하순은 일본 국내 비수기라 11월경 예약이면 무료 취소 조건을 붙여도 값이 크게 오르지 않습니다.</li>
+          <li><b>숙박세</b> — 1인 1박 ¥100~200이 현장 징수될 수 있습니다. 예비비에 포함해 뒀습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><h2>일정</h2><span class="note">시각은 여유 있게 잡았습니다 — 겨울 해가 17시 30분경 집니다</span></div>
+
+    <!-- DAY 1 -->
+    <article class="day" style="--rail:var(--l-nankai)">
+      <div class="dhead">
+        <div class="dnum">DAY 1</div>
+        <div class="dtitle">
+          <h3>도착, 그리고 곧장 도톤보리</h3>
+          <div class="meta">1월 23일 토요일 · <span class="lineTag">난카이 공항선 → 미도스지선</span></div>
+        </div>
+        <div class="dcost">1인 지출<span class="cost" data-yen="5470">¥5,470</span></div>
+      </div>
+      <div class="tt">
+        <div class="t">10:00</div>
+        <div class="c"><h4>인천 출발</h4><p>LCC 오전편 기준. 4인이면 위탁수하물을 2개만 붙이고 나눠 싣는 편이 쌉니다.</p></div>
+        <div class="t">11:50</div>
+        <div class="c"><h4>간사이공항 도착 · 입국</h4><p>Visit Japan Web을 미리 등록해 두면 QR 한 번으로 통과합니다. ICOCA는 2층 난카이 매표소에서.</p></div>
+        <div class="t">13:10</div>
+        <div class="c"><h4>난카이 공항급행 → 난바 <span class="tag">¥970</span></h4><p>45분. 캐리어는 맨 앞·뒤 칸 선반이 여유롭습니다.</p></div>
+        <div class="t">14:30</div>
+        <div class="c"><h4>숙소 짐 맡기기</h4><p>체크인은 15시지만 대부분 짐은 먼저 받아 줍니다. 바로 나가세요.</p></div>
+        <div class="t">15:00</div>
+        <div class="c"><h4>구로몬 시장 <span class="tag free">입장 무료</span></h4><p>참치회, 구운 가리비, 와규 꼬치, 딸기. 4명이 한 접시씩 나눠 먹으면 <span class="cost" data-yen="1500">¥1,500</span>로 배가 찹니다.
+          <span class="tip">16시 이후엔 회·초밥이 할인으로 나옵니다. 대신 18시면 대부분 닫으니 첫 코스로 넣었습니다.</span></p></div>
+        <div class="t">17:00</div>
+        <div class="c"><h4>도톤보리 · 호젠지 요코초 <span class="tag free">무료</span></h4><p>글리코 사인, 에비스바시 다리, 이끼 덮인 미즈카케 부동존. 해 지고 네온이 켜진 뒤가 이 동네의 본모습입니다.</p></div>
+        <div class="t">18:30</div>
+        <div class="c"><h4>첫 저녁 — 오코노미야키 또는 라멘</h4><p>미즈노·치보는 토요일 저녁 1시간 대기. 대기 없이 가려면 <b>킨류라멘</b>(24시간, 김치·부추 무한 리필)이나 <b>카무쿠라</b>가 낫습니다. 1인 <span class="cost" data-yen="1200">¥1,200</span> 선.</p></div>
+        <div class="t">20:00</div>
+        <div class="c"><h4>돈키호테 에비스타워</h4><p>가격 확인만 하고 <b>구매는 Day 5로 미루세요.</b> 짐이 되고, 어차피 면세는 한 번에 몰아야 유리합니다.</p></div>
+      </div>
+    </article>
+
+    <!-- DAY 2 -->
+    <article class="day" style="--rail:var(--l-mido)">
+      <div class="dhead">
+        <div class="dnum">DAY 2</div>
+        <div class="dtitle">
+          <h3>주유패스 하루로 오사카를 다 본다</h3>
+          <div class="meta">1월 24일 일요일 · <span class="lineTag">주유패스 1일권 — 지하철 무제한</span></div>
+        </div>
+        <div class="dcost">1인 지출<span class="cost" data-yen="7300">¥7,300</span></div>
+      </div>
+      <div class="tt">
+        <div class="t">08:30</div>
+        <div class="c"><h4>편의점 조식 <span class="tag">¥500</span></h4><p>패스는 첫 개찰 시각부터가 아니라 <b>당일 자정까지</b> 유효합니다. 일찍 시작할수록 이득.</p></div>
+        <div class="t">09:20</div>
+        <div class="c"><h4>오사카성 천수각 <span class="tag pass">패스 무료 · 정가 ¥600</span></h4><p>개장 9시. 8층 전망대까지 엘리베이터가 있지만 줄이 깁니다 — 이른 시각이면 그냥 계단이 빠릅니다.</p></div>
+        <div class="t">11:00</div>
+        <div class="c"><h4>니시노마루 정원 · 오테몬 산책 <span class="tag free">무료</span></h4><p>겨울 해자에 성이 통째로 비칩니다. 성 사진은 여기가 제일 낫습니다.</p></div>
+        <div class="t">12:30</div>
+        <div class="c"><h4>점심 — 텐만바시 상가</h4><p>관광지 바로 앞을 피해 한 블록 안쪽 정식집으로. 1인 <span class="cost" data-yen="1100">¥1,100</span>.</p></div>
+        <div class="t">14:00</div>
+        <div class="c"><h4>우메다 공중정원 전망대 <span class="tag pass">패스 무료 · 정가 ¥2,000</span></h4><p>패스로 가장 비싼 항목. 173m 옥상이 뚫려 있어 1월엔 정말 춥습니다 — 장갑을 챙기세요.</p></div>
+        <div class="t">16:00</div>
+        <div class="c"><h4>헵파이브 관람차 <span class="tag pass">패스 무료 · 정가 ¥800</span></h4><p>15분 한 바퀴. 4인이 한 캐빈에 딱 맞습니다.
+          <span class="tip">여기까지만 해도 ¥3,400 — 패스값 ¥3,500을 거의 회수했고 지하철은 덤입니다.</span></p></div>
+        <div class="t">17:30</div>
+        <div class="c"><h4>화이티 우메다 지하상가</h4><p>추운 저녁을 지하로만 다닐 수 있는 동네입니다. 요도바시 우메다에서 전자제품 시세도 확인.</p></div>
+        <div class="t">19:00</div>
+        <div class="c"><h4>저녁 <span class="tag">¥1,500</span></h4><p>지하상가 정식집이 지상보다 20% 쌉니다.</p></div>
+      </div>
+      <div class="alt"><b>패스로 더 태울 수 있다면</b> — 톰볼리 산타마리아 크루즈(정가 ¥1,800)나 우메다 스카이빌딩 대신 츠텐카쿠(¥1,000)를 넣어도 됩니다. 다만 겨울 일몰이 이르니 하루에 네 곳 이상은 무리입니다.</div>
+    </article>
+
+    <!-- DAY 3 -->
+    <article class="day" style="--rail:var(--l-hankyu)">
+      <div class="dhead">
+        <div class="dnum">DAY 3</div>
+        <div class="dtitle">
+          <h3>교토 당일치기</h3>
+          <div class="meta">1월 25일 월요일 · <span class="lineTag">한큐 교토선 (마룬색 전철)</span></div>
+        </div>
+        <div class="dcost">1인 지출<span class="cost" data-yen="5100">¥5,100</span></div>
+      </div>
+      <div class="tt">
+        <div class="t">07:30</div>
+        <div class="c"><h4>숙소 조식 <span class="tag">¥500</span></h4><p>월요일은 오사카 시내 박물관·미술관이 대거 휴관입니다. 그래서 <b>연중무휴인 교토 사찰</b>을 이 날로 배치했습니다.</p></div>
+        <div class="t">08:20</div>
+        <div class="c"><h4>난바 → 우메다 → 카와라마치 <span class="tag">¥650</span></h4><p>미도스지선 ¥240 + 한큐 특급 ¥410. 특급도 추가요금이 없습니다 — 좌석만 잡으면 45분 편히 갑니다.</p></div>
+        <div class="t">09:40</div>
+        <div class="c"><h4>기요미즈데라 <span class="tag">¥500</span></h4><p>10시 전 도착이 관건. 산넨자카·니넨자카 돌계단은 오전 광선이 훨씬 좋고 사람도 절반입니다.</p></div>
+        <div class="t">12:00</div>
+        <div class="c"><h4>기온 · 하나미코지 → 점심 <span class="tag">¥1,200</span></h4><p>니신소바 한 그릇. 골목 사진 촬영 금지 구역이 표지판으로 지정돼 있으니 확인하세요.</p></div>
+        <div class="t">14:00</div>
+        <div class="c"><h4>후시미이나리 신사 <span class="tag free">무료</span></h4><p>센본토리이. 오후 늦게 갈수록 사람이 빠집니다. 정상까지는 왕복 2시간 — <b>요츠츠지 전망대까지 40분</b>만 올라가도 교토 시내가 다 보입니다.</p>
+          <span class="tip">교토에서 유일한 무료 대형 명소이자, 겨울 해 질 녘 조명이 켜지는 몇 안 되는 곳입니다.</span></div>
+        <div class="t">16:40</div>
+        <div class="c"><h4>이나리역 → 교토역 → 오사카 <span class="tag">¥650</span></h4><p>JR 나라선 두 정거장. 돌아올 땐 우메다 환승이 번거로우면 JR 신쾌속으로 오사카역까지 한 번에.</p></div>
+        <div class="t">19:00</div>
+        <div class="c"><h4>난바에서 저녁 <span class="tag">¥1,600</span></h4><p>교토 물가는 오사카보다 20% 비쌉니다. 저녁은 무조건 돌아와서.</p></div>
+      </div>
+      <div class="alt"><b>교토가 부담스럽다면</b> — <b>나라</b>는 킨테츠 오사카난바에서 왕복 <span class="cost" data-yen="1360">¥1,360</span>, 사슴공원·도다이지가 반나절이면 끝나 오후를 오사카에 쓸 수 있습니다. <b>고베</b>는 한큐 왕복 <span class="cost" data-yen="820">¥820</span>로 가장 싸고, 모자이크 항구 야경이 좋습니다.</div>
+    </article>
+
+    <!-- DAY 4 -->
+    <article class="day" style="--rail:var(--l-sakai)">
+      <div class="dhead">
+        <div class="dnum">DAY 4</div>
+        <div class="dtitle">
+          <h3>신세카이와 텐노지 — 옛 오사카</h3>
+          <div class="meta">1월 26일 화요일 · <span class="lineTag">사카이스지선 · 미도스지선</span></div>
+        </div>
+        <div class="dcost">1인 지출<span class="cost" data-yen="7100">¥7,100</span></div>
+      </div>
+      <div class="tt">
+        <div class="t">09:30</div>
+        <div class="c"><h4>시텐노지 <span class="tag free">경내 무료 · 중심가람 ¥300</span></h4><p>일본에서 가장 오래된 관사 사찰. 경내만 걸어도 충분합니다.</p></div>
+        <div class="t">11:00</div>
+        <div class="c"><h4>신세카이 · 츠텐카쿠 <span class="tag">¥1,000</span></h4><p>1912년 파리 만국박람회를 흉내 내 지은 동네가 그대로 남았습니다. 전망대가 부담되면 아래에서 간판 골목만 걸어도 좋습니다.</p></div>
+        <div class="t">12:00</div>
+        <div class="c"><h4>쿠시카츠 점심 <span class="tag">¥1,500</span></h4><p>다루마 본점 등. <b>소스 두 번 찍기 금지</b>가 이 동네 유일한 규칙입니다 — 양배추로 소스를 퍼서 뿌리세요.</p></div>
+        <div class="t">14:00</div>
+        <div class="c"><h4>아베노 하루카스 16층 정원 <span class="tag free">무료</span></h4><p>전망대는 <span class="cost" data-yen="2000">¥2,000</span>. 16층 무료 옥상정원에서도 오사카가 충분히 내려다보입니다.
+          <span class="tip">4인이면 여기서만 ¥8,000을 아낍니다 — 그 돈으로 오늘 저녁을 제대로 먹습니다.</span></p></div>
+        <div class="t">15:30</div>
+        <div class="c"><h4>텐노지 미오 · 큐즈몰</h4><p>또는 <b>스파월드</b>(<span class="cost" data-yen="1500">¥1,500</span>) 온천에서 걷느라 지친 다리 풀기. 문신 규정 확인 필요.</p></div>
+        <div class="t">17:30</div>
+        <div class="c"><h4>아메리카무라 · 신사이바시스지</h4><p>중고 의류와 빈티지. 신사이바시 아케이드는 비가 와도 젖지 않습니다.</p></div>
+        <div class="t">19:30</div>
+        <div class="c"><h4>이 여행의 제대로 된 저녁 <span class="tag">¥3,000</span></h4><p>야키니쿠나 스시. 아껴 온 이유가 오늘입니다.
+          <span class="tip">더 아끼려면 회전초밥(쿠라스시·스시로) 1접시 ¥120대 — 4인이 배부르게 먹어도 ¥6,000 안쪽입니다.</span></p></div>
+        <div class="t">21:30</div>
+        <div class="c"><h4>짐 정리 · 세탁</h4><p>내일 아침은 쇼핑만 하고 바로 공항으로 갑니다.</p></div>
+      </div>
+    </article>
+
+    <!-- DAY 5 -->
+    <article class="day" style="--rail:var(--l-nankai)">
+      <div class="dhead">
+        <div class="dnum">DAY 5</div>
+        <div class="dtitle">
+          <h3>몰아서 쇼핑, 그리고 귀국</h3>
+          <div class="meta">1월 27일 수요일 · <span class="lineTag">난카이 공항선</span></div>
+        </div>
+        <div class="dcost">1인 지출<span class="cost" data-yen="3200">¥3,200</span> <span style="font-size:.75rem">+ 쇼핑</span></div>
+      </div>
+      <div class="tt">
+        <div class="t">08:00</div>
+        <div class="c"><h4>조식 · 체크아웃</h4><p>짐은 숙소에 맡기거나 난바역 코인락커(대형 <span class="cost" data-yen="700">¥700</span>).</p></div>
+        <div class="t">09:00</div>
+        <div class="c"><h4>드럭스토어 · 돈키호테 면세 쇼핑</h4><p><b>4명 것을 한 명 여권으로 한 번에 계산</b>하지 말고, 각자 여권으로 ¥5,000씩 채우는 편이 확실합니다. 소모품 면세분은 개봉 금지 봉투로 밀봉됩니다.</p></div>
+        <div class="t">10:30</div>
+        <div class="c"><h4>덴덴타운 또는 신사이바시</h4><p>전자·피규어는 닛폰바시 덴덴타운, 의류·화장품은 신사이바시. 숙소에서 둘 다 도보권입니다.</p></div>
+        <div class="t">11:30</div>
+        <div class="c"><h4>구로몬 마지막 식사 <span class="tag">¥1,500</span></h4><p>첫날 눈에만 담아 둔 것을 먹는 자리로 남겨 뒀습니다.</p></div>
+        <div class="t">12:40</div>
+        <div class="c"><h4>난바 → 간사이공항 <span class="tag">¥970</span></h4><p>45분. 국제선은 <b>출발 2시간 전</b> 도착 기준으로 역산했습니다.</p></div>
+        <div class="t">13:40</div>
+        <div class="c"><h4>체크인 · 소비세 환급 확인</h4><p>면세 물품은 위탁수하물에 넣기 전에 세관 확인이 필요할 수 있습니다. 여유 시간을 두세요.</p></div>
+        <div class="t">15:30</div>
+        <div class="c"><h4>간사이공항 출발 → 17:20 인천</h4><p>수요일 오후편은 주말편보다 1인 3~5만원 저렴합니다.</p></div>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="shead">
+      <h2>예산 상세</h2>
+      <span class="note">100엔 = <span id="rateEcho" class="mono">870</span>원 기준</span>
+      <span style="margin-left:auto">
+        <span class="seg" role="group" aria-label="인원 기준">
+          <button type="button" id="btnPer" aria-pressed="true">1인 기준</button>
+          <button type="button" id="btnAll" aria-pressed="false">4인 합계</button>
+        </span>
+      </span>
+    </div>
+    <div class="tblwrap">
+      <table id="budget">
+        <thead>
+          <tr><th>항목</th><th>산출 근거</th><th class="num">엔화</th><th class="num">원화</th></tr>
+        </thead>
+        <tbody>
+          <tr data-krw="290000"><td>항공권 왕복</td><td class="sub" style="color:var(--ink-2)">인천–간사이 LCC, 1월 하순 비수기 · 토요일 출발 / 수요일 귀국</td><td class="num">—</td><td class="num"></td></tr>
+          <tr data-yen="22000"><td>숙소 4박</td><td class="sub" style="color:var(--ink-2)">닛폰바시 4인 1실 ¥22,000 × 4박 ÷ 4명</td><td class="num"></td><td class="num"></td></tr>
+          <tr data-yen="8240"><td>교통</td><td class="sub" style="color:var(--ink-2)">공항 왕복 ¥1,940 + 주유패스 ¥3,500 + 교토 ¥1,300 + 시내 ¥1,500</td><td class="num"></td><td class="num"></td></tr>
+          <tr data-yen="18000"><td>식비</td><td class="sub" style="color:var(--ink-2)">1일 ¥3,600 × 5일 (조식 ¥500 / 중식 ¥1,100 / 석식 ¥2,000)</td><td class="num"></td><td class="num"></td></tr>
+          <tr data-yen="3000"><td>입장료</td><td class="sub" style="color:var(--ink-2)">기요미즈데라 · 시텐노지 · 츠텐카쿠 등 (주유패스 대상 제외)</td><td class="num"></td><td class="num"></td></tr>
+          <tr data-yen="15000"><td>쇼핑 · 예비비</td><td class="sub" style="color:var(--ink-2)">기념품, 숙박세, 코인락커, 돌발 상황</td><td class="num"></td><td class="num"></td></tr>
+          <tr data-krw="25000"><td>보험 · 유심 · 부대</td><td class="sub" style="color:var(--ink-2)">여행자보험 약 1만원 + eSIM 5일권 약 1만원 + 환전 수수료</td><td class="num">—</td><td class="num"></td></tr>
+          <tr class="total"><td id="totLabel">총계 (1인)</td><td class="sub" style="color:var(--ink-2)">엔화 지출 + 원화 결제분</td><td class="num" id="totYen"></td><td class="num" id="totKrw"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alt"><b>더 줄인다면 1인 약 72만원</b> — 쇼핑·예비비를 <span class="cost" data-yen="6000">¥6,000</span>로 낮추고, 숙소를 텐노지(1박 <span class="cost" data-yen="18000">¥18,000</span>)로 바꾸면 됩니다. <b>반대로 유니버설 스튜디오</b>를 하루 넣으면 티켓만 1인 <span class="cost" data-yen="9000">¥9,000</span> 이상이라 총액이 12만원쯤 오릅니다 — 이 계획에서 뺀 이유입니다.</div>
+  </section>
+
+  <section>
+    <div class="shead"><h2>1월 오사카, 그리고 챙길 것</h2></div>
+    <div class="cols2">
+      <div class="panel">
+        <h3>날씨와 옷차림</h3>
+        <ul>
+          <li><b>3 – 9℃</b> · 서울보다 5~7도 따뜻하지만 습해서 체감은 비슷합니다.</li>
+          <li><b>눈은 거의 없고 강수도 적습니다.</b> 1월은 오사카에서 가장 건조한 달에 속합니다.</li>
+          <li><b>실내 난방이 셉니다.</b> 두꺼운 코트 하나보다 <b>얇은 옷 여러 겹 + 경량 패딩</b>이 훨씬 편합니다.</li>
+          <li>하루 <b>1만 5천 보</b> 이상 걷습니다. 신발 하나에만 돈을 쓰세요.</li>
+          <li>우메다 공중정원과 후시미이나리 능선은 바람이 강합니다 — 장갑과 넥워머.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>출국 전 체크리스트</h3>
+        <ul class="check" id="checklist">
+          <li><label><input type="checkbox" data-k="c1"><span>여권 유효기간 6개월 이상 (4명 전원)</span></label></li>
+          <li><label><input type="checkbox" data-k="c2"><span>Visit Japan Web 등록 — 입국·세관 QR</span></label></li>
+          <li><label><input type="checkbox" data-k="c3"><span>항공권 · 숙소 바우처 오프라인 저장</span></label></li>
+          <li><label><input type="checkbox" data-k="c4"><span>여행자보험 가입 (1인 약 1만원)</span></label></li>
+          <li><label><input type="checkbox" data-k="c5"><span>eSIM 또는 포켓와이파이 5일권</span></label></li>
+          <li><label><input type="checkbox" data-k="c6"><span>엔화 현금 1인 ¥30,000 환전</span></label></li>
+          <li><label><input type="checkbox" data-k="c7"><span>트래블카드 발급 · 엔화 충전</span></label></li>
+          <li><label><input type="checkbox" data-k="c8"><span>오사카 주유패스 1일권 사전 구매 (Day 2용)</span></label></li>
+          <li><label><input type="checkbox" data-k="c9"><span>110V 변환 어댑터 · 보조배터리 (기내 반입만)</span></label></li>
+          <li><label><input type="checkbox" data-k="c10"><span>상비약 · 립밤 (건조함)</span></label></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>요금 기준: 오사카 주유패스 1일권 ¥3,500, 난카이 공항급행 ¥970 (2026년 공시 기준). 항공·숙박은 1월 하순 비수기 시세를 바탕으로 한 추정치이며 실제 예약가는 달라질 수 있습니다.</p>
+    <p>환율 100엔 = 870원 (1엔 = 8.70원) 기준. 상단 입력란에서 환율을 바꾸면 엔화 항목의 원화 환산액이 모두 갱신됩니다.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var rateEl = document.getElementById('rate');
+  var mult = 1;
+
+  function rate(){
+    var v = parseFloat(rateEl.value);
+    return (isFinite(v) && v > 0) ? v : 870;
+  }
+  function won(yen){ return Math.round(yen * rate() / 100); }
+  function fw(n){ return n.toLocaleString('ko-KR') + '원'; }
+  function fy(n){ return '¥' + n.toLocaleString('en-US'); }
+
+  // inline ¥ figures -> append won
+  var costs = [].slice.call(document.querySelectorAll('.cost[data-yen]'));
+  costs.forEach(function(el){
+    var s = document.createElement('span');
+    s.className = 'krw';
+    el.appendChild(s);
+    el._krw = s;
+  });
+
+  // budget table
+  var rows = [].slice.call(document.querySelectorAll('#budget tbody tr[data-yen], #budget tbody tr[data-krw]'));
+  var totYen = document.getElementById('totYen'), totKrw = document.getElementById('totKrw');
+  var totLabel = document.getElementById('totLabel');
+
+  function render(){
+    var r = rate();
+    document.getElementById('perYen').textContent = (r/100).toFixed(2) + '원';
+    document.getElementById('rateEcho').textContent = r.toLocaleString('ko-KR');
+
+    costs.forEach(function(el){
+      el._krw.textContent = fw(won(parseFloat(el.dataset.yen)));
+    });
+
+    var sumYen = 0, sumKrw = 0;
+    rows.forEach(function(tr){
+      var cells = tr.querySelectorAll('td.num');
+      var y = tr.dataset.yen ? parseFloat(tr.dataset.yen) * mult : 0;
+      var k = tr.dataset.krw ? parseFloat(tr.dataset.krw) * mult : won(y);
+      if (tr.dataset.yen) cells[0].textContent = fy(y);
+      cells[1].textContent = fw(k);
+      sumYen += y; sumKrw += k;
+    });
+    totYen.textContent = fy(sumYen);
+    totKrw.textContent = fw(sumKrw);
+    totLabel.textContent = mult === 1 ? '총계 (1인)' : '총계 (4인)';
+
+    // headline tiles
+    var perYen = 66240, perKrwFixed = 315000;
+    var per = won(perYen) + perKrwFixed;
+    document.getElementById('tPer').textContent = fw(per);
+    document.getElementById('tAll').textContent = fw(per * 4);
+    document.getElementById('tDay').textContent = fw(Math.round(won(perYen - 15000) / 5));
+    document.getElementById('liveTotal').textContent = fw(per * 4);
+  }
+
+  rateEl.addEventListener('input', render);
+
+  var bp = document.getElementById('btnPer'), ba = document.getElementById('btnAll');
+  function setMult(m){
+    mult = m;
+    bp.setAttribute('aria-pressed', m === 1 ? 'true' : 'false');
+    ba.setAttribute('aria-pressed', m === 4 ? 'true' : 'false');
+    render();
+  }
+  bp.addEventListener('click', function(){ setMult(1); });
+  ba.addEventListener('click', function(){ setMult(4); });
+
+  // checklist persistence
+  var boxes = [].slice.call(document.querySelectorAll('#checklist input[type=checkbox]'));
+  boxes.forEach(function(b){
+    try { if (localStorage.getItem('osaka27_' + b.dataset.k) === '1') b.checked = true; } catch(e){}
+    b.addEventListener('change', function(){
+      try { localStorage.setItem('osaka27_' + b.dataset.k, b.checked ? '1' : '0'); } catch(e){}
+    });
+  });
+
+  render();
+})();
+</script>
