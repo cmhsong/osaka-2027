@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오사카 여행 링크 모음 — 검색</title>
+<meta name="description" content="2027년 1월 오사카 4박 5일 일정에 필요한 공식 사이트 링크를 한곳에 모아 검색합니다.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap');
+
+:root{
+  --paper:#F7F5F2; --card:#FFFFFF; --sunk:#F1EDE8;
+  --ink:#191512; --ink-2:#5C534B; --ink-3:#8E837A;
+  --line:#E3DDD5; --line-2:#CEC5B9;
+  --accent:#C82A26; --accent-soft:#FBEBE9; --accent-ink:#9E1F1C;
+  --green:#1D7A56; --green-soft:#E8F2ED;
+  --gold:#8A6A1F; --gold-soft:#F7F0DE;
+  --shadow:0 1px 2px rgba(25,21,18,.05), 0 8px 24px -14px rgba(25,21,18,.22);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141210; --card:#1D1A17; --sunk:#221E1A;
+    --ink:#F1ECE6; --ink-2:#B6ADA3; --ink-3:#898077;
+    --line:#2E2A25; --line-2:#413A33;
+    --accent:#FF7268; --accent-soft:#31201E; --accent-ink:#FF8F86;
+    --green:#5FC79B; --green-soft:#16261F;
+    --gold:#D9B160; --gold-soft:#2A2317;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141210; --card:#1D1A17; --sunk:#221E1A;
+  --ink:#F1ECE6; --ink-2:#B6ADA3; --ink-3:#898077;
+  --line:#2E2A25; --line-2:#413A33;
+  --accent:#FF7268; --accent-soft:#31201E; --accent-ink:#FF8F86;
+  --green:#5FC79B; --green-soft:#16261F;
+  --gold:#D9B160; --gold-soft:#2A2317;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'IBM Plex Sans KR','Malgun Gothic',sans-serif;
+  font-weight:300; font-size:16px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px 96px}
+h1,h2,h3{font-family:'Hahmlet','Nanum Myeongjo',serif; font-weight:600; margin:0; line-height:1.3}
+p{margin:0}
+a{color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums}
+
+/* ---------- masthead ---------- */
+.mast{padding:52px 0 24px}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:.7rem; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3);
+}
+.mast h1{font-size:clamp(2rem,5vw,3rem); font-weight:800; letter-spacing:-.02em; margin-top:8px}
+.mast h1 em{font-style:normal; color:var(--accent)}
+.mast .sub{margin-top:12px; color:var(--ink-2); font-size:1rem; max-width:64ch}
+.back{
+  display:inline-flex; align-items:center; gap:7px; margin-top:18px; font-size:.85rem;
+  text-decoration:none; color:var(--ink-2); padding:6px 14px;
+  border:1px solid var(--line); border-radius:999px; background:var(--card);
+}
+.back:hover{border-color:var(--accent); color:var(--accent-ink)}
+
+/* ---------- search ---------- */
+.searchbar{
+  position:sticky; top:0; z-index:20; margin:0 -24px; padding:14px 24px 12px;
+  background:color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.sfield{position:relative; display:flex; align-items:center}
+.sfield svg{position:absolute; left:14px; width:17px; height:17px; stroke:var(--ink-3); fill:none; stroke-width:2; pointer-events:none}
+#q{
+  width:100%; padding:12px 96px 12px 40px; border:1px solid var(--line-2); border-radius:10px;
+  background:var(--card); color:var(--ink); font-family:inherit; font-size:1rem; font-weight:400;
+}
+#q::placeholder{color:var(--ink-3); font-weight:300}
+#q:focus{border-color:var(--accent); outline:none}
+.skey{
+  position:absolute; right:12px; display:flex; align-items:center; gap:8px;
+  font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--ink-3);
+}
+.skey kbd{
+  border:1px solid var(--line-2); border-bottom-width:2px; border-radius:4px;
+  padding:1px 6px; background:var(--sunk); font-family:inherit;
+}
+#clear{
+  appearance:none; border:0; background:transparent; color:var(--ink-3);
+  cursor:pointer; font-size:1.1rem; line-height:1; padding:2px 4px; display:none;
+}
+#clear:hover{color:var(--accent)}
+
+.chips{display:flex; flex-wrap:wrap; gap:7px; margin-top:11px}
+.chips button{
+  appearance:none; cursor:pointer; font-family:inherit; font-size:.8rem; color:var(--ink-2);
+  padding:5px 13px; border:1px solid var(--line); border-radius:999px; background:var(--card);
+}
+.chips button:hover{border-color:var(--line-2); color:var(--ink)}
+.chips button[aria-pressed="true"]{
+  background:var(--accent); border-color:var(--accent); color:#fff; font-weight:500;
+}
+.chips button .n{font-family:'IBM Plex Mono',monospace; font-size:.7rem; opacity:.65; margin-left:5px}
+
+.count{margin:18px 0 14px; font-size:.82rem; color:var(--ink-3)}
+.count b{color:var(--ink); font-weight:500; font-family:'IBM Plex Mono',monospace}
+
+/* ---------- cards ---------- */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(296px,1fr)); gap:14px}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:10px;
+  padding:16px 17px 13px; display:flex; flex-direction:column; box-shadow:var(--shadow);
+}
+.card:hover{border-color:var(--line-2)}
+.ch{display:flex; align-items:baseline; gap:8px; flex-wrap:wrap}
+.ch a{
+  font-family:'Hahmlet','Nanum Myeongjo',serif; font-weight:600; font-size:1rem;
+  color:var(--ink); text-decoration:none;
+}
+.ch a:hover{color:var(--accent-ink); text-decoration:underline; text-underline-offset:3px}
+.ch a::after{content:' ↗'; font-size:.72rem; color:var(--ink-3); font-weight:400}
+.jp{font-size:.76rem; color:var(--ink-3); margin-top:2px; font-weight:400}
+.cd{font-size:.85rem; color:var(--ink-2); margin-top:8px; flex:1}
+.cf{
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin-top:11px; padding-top:9px; border-top:1px solid var(--line);
+}
+.host{font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--ink-3); overflow:hidden; text-overflow:ellipsis}
+.gs{margin-left:auto; font-size:.72rem; color:var(--ink-3); text-decoration:none; white-space:nowrap}
+.gs:hover{color:var(--accent-ink); text-decoration:underline}
+.badge{
+  font-family:'IBM Plex Mono',monospace; font-size:.63rem; letter-spacing:.06em; font-weight:500;
+  padding:2px 6px; border-radius:4px; white-space:nowrap;
+}
+.badge.ok{background:var(--green-soft); color:var(--green)}
+.badge.blk{background:var(--gold-soft); color:var(--gold)}
+.badge.day{background:var(--accent-soft); color:var(--accent-ink)}
+.badge.cat{background:var(--sunk); color:var(--ink-3)}
+mark{background:var(--gold-soft); color:var(--ink); border-radius:2px; padding:0 1px}
+
+.empty{
+  text-align:center; padding:56px 20px; color:var(--ink-3); font-size:.9rem;
+  border:1px dashed var(--line-2); border-radius:10px;
+}
+.empty b{display:block; color:var(--ink); font-weight:500; font-size:1rem; margin-bottom:6px}
+.empty a{font-size:.85rem}
+
+.note{
+  margin-top:34px; padding:16px 18px; background:var(--sunk); border-radius:9px;
+  border-left:3px solid var(--line-2); font-size:.84rem; color:var(--ink-2);
+}
+.note b{color:var(--ink); font-weight:500}
+.note p+p{margin-top:8px}
+
+footer{margin-top:44px; padding-top:20px; border-top:1px solid var(--line); font-size:.78rem; color:var(--ink-3)}
+
+@media (max-width:640px){
+  .mast{padding-top:34px}
+  .grid{grid-template-columns:1fr}
+  .skey .hint{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">2027.01.23 — 01.27 · 오사카 4박 5일</div>
+    <h1>여행 <em>링크</em> 모음</h1>
+    <p class="sub">일정에 필요한 공식 사이트만 모았습니다. 이름·일본어 원문·주소·설명 어디로든 검색되고, 한글 초성(<span class="mono">ㅌㅂㄹㄱ</span> → 타베로그)으로도 찾을 수 있습니다.</p>
+    <a class="back" href="./">← 오사카 4박 5일 플랜으로</a>
+  </header>
+
+  <div class="searchbar">
+    <div class="sfield">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="검색 — 예: 주유패스, tabelog, 면세, ㅌㅇㅋㅈㅋ" autocomplete="off" spellcheck="false" aria-label="링크 검색">
+      <span class="skey">
+        <button id="clear" type="button" aria-label="검색어 지우기">×</button>
+        <span class="hint"><kbd>/</kbd></span>
+      </span>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="분류 필터"></div>
+  </div>
+
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+
+  <div class="note">
+    <p><b>링크 상태 표기</b> — <span class="badge ok">확인</span> 은 2026년 9월 15일에 실제로 접속해 정상 응답을 받은 주소입니다. <span class="badge blk">차단</span> 은 사이트는 정상이지만 자동 접속을 막아 두어 응답 코드로는 확인하지 못한 곳으로, <b>브라우저에서는 정상적으로 열립니다.</b></p>
+    <p><b>링크가 죽었다면</b> — 각 카드 오른쪽 아래의 <b>검색</b>을 누르면 그 이름으로 구글 검색이 열립니다. 일본 사이트는 개편이 잦아 경로가 바뀌는 일이 있습니다.</p>
+    <p><b>주의</b> — 한큐백화점은 우메다 본점 전용 주소가 따로 없어 백화점 대표 사이트로 연결됩니다. 접속 후 <b>우메다 본점</b>을 선택하세요. 콤데가르송·바오바오의 <b>오사카 개별 매장</b>은 공식 스토어 목록에서 직접 확인해야 합니다 — 단독 매장은 이전·폐점이 잦습니다.</p>
+  </div>
+
+  <footer>
+    <p>오사카 4박 5일 가성비 플랜의 부속 페이지입니다. 링크 접속 확인일 2026년 9월 15일 · 여행일 2027년 1월 23~27일 — 출발 전 다시 한 번 확인하세요.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var DATA = [
+    // ── 입국 · 공항 ──────────────────────────────────────
+    {n:'Visit Japan Web', jp:'', u:'https://services.digital.go.jp/visit-japan-web/', c:'입국·공항', d:['D1','D5'], s:'ok',
+     t:'입국심사와 세관신고를 미리 등록해 QR 하나로 통과합니다. 4명 전원 각자 등록해야 합니다.', k:'입국 세관 큐알 QR 신고'},
+    {n:'간사이국제공항', jp:'関西国際空港 / KIX', u:'https://www.kansai-airport.or.jp/', c:'입국·공항', d:['D1','D5'], s:'blk',
+     t:'터미널 지도, 운항 현황, 면세 환급 카운터 위치. 출국 2시간 전 도착 기준으로 역산하세요.', k:'kix 공항 터미널 항공'},
+    {n:'공항 리무진버스 KATE', jp:'関西空港交通', u:'https://www.kate.co.jp/', c:'입국·공항', d:['D1','D5'], s:'ok',
+     t:'난카이 대신 버스를 탈 경우. 이 일정은 공항급행(¥970)을 쓰므로 참고용입니다.', k:'버스 리무진 공항'},
+
+    // ── 교통 ────────────────────────────────────────────
+    {n:'난카이 전철', jp:'南海電鉄', u:'https://www.nankai.co.jp/', c:'교통', d:['D1','D5'], s:'ok',
+     t:'간사이공항 ↔ 난바. 공항급행 ¥970, 45분. 라피트(¥1,490)와의 시간 차는 10분뿐입니다.', k:'난바 공항급행 라피트 nankai'},
+    {n:'난카이 여행정보 NATTS', jp:'', u:'https://www.nankai.co.jp/en/community/natts/', c:'교통', d:[], s:'ok',
+     t:'난카이 연선 관광 정보 영문판. 시각표와 할인권 정보가 정리돼 있습니다.', k:'natts howto osaka 영문'},
+    {n:'Osaka Metro', jp:'大阪メトロ', u:'https://subway.osakametro.co.jp/', c:'교통', d:['D2','D4'], s:'ok',
+     t:'미도스지선·사카이스지선·센니치마에선 노선도와 막차 시각. 숙소 닛폰바시가 두 노선 교차점입니다.', k:'지하철 노선도 미도스지 사카이스지 막차 metro'},
+    {n:'오사카 주유패스', jp:'大阪周遊パス', u:'https://www.osp.osaka-info.jp/', c:'교통', d:['D2'], s:'ok',
+     t:'Day 2 전용. 1일권 ¥3,500으로 오사카성·공중정원·헵파이브 입장이 무료이고 지하철도 무제한입니다.', k:'주유패스 패스 amazing pass 1일권'},
+    {n:'Osaka Amazing Pass (영문)', jp:'', u:'https://osaka-amazing-pass.com/', c:'교통', d:['D2'], s:'ok',
+     t:'주유패스 영문 안내. 무료 입장 시설 목록과 휴관일을 여기서 대조하세요.', k:'amazing pass 영문 무료시설'},
+    {n:'ICOCA', jp:'イコカ', u:'https://www.jr-odekake.net/icoca/', c:'교통', d:['D1'], s:'ok',
+     t:'교통카드. 보증금 ¥500 + 충전 ¥2,000이면 5일 충분. 아이폰 지갑에 실물 없이 발급 가능합니다.', k:'이코카 교통카드 충전 애플페이'},
+    {n:'한큐 전철', jp:'阪急電鉄', u:'https://www.hankyu.co.jp/', c:'교통', d:['D3'], s:'ok',
+     t:'교토 당일치기용. 우메다 → 카와라마치 특급 ¥410, 추가요금 없이 45분입니다.', k:'교토 카와라마치 특급 hankyu'},
+    {n:'JR 서일본 (영문)', jp:'JR West', u:'https://www.westjr.co.jp/global/en/', c:'교통', d:['D3'], s:'ok',
+     t:'교토에서 돌아올 때 신쾌속 이용 시. 이나리역 → 교토역 → 오사카역.', k:'jr 신쾌속 서일본 west'},
+    {n:'JR 오데카케넷', jp:'JRおでかけネット', u:'https://www.jr-odekake.net/', c:'교통', d:['D3'], s:'ok',
+     t:'JR 서일본 일본어 공식. 실시간 운행 정보가 영문판보다 빠릅니다.', k:'jr 운행정보 시각표'},
+    {n:'킨테츠 전철', jp:'近鉄', u:'https://www.kintetsu.co.jp/', c:'교통', d:['D3'], s:'ok',
+     t:'교토 대신 나라로 갈 경우. 오사카난바 ↔ 나라 왕복 ¥1,360.', k:'나라 킨테츠 대안'},
+
+    // ── 관광 ────────────────────────────────────────────
+    {n:'오사카 관광국', jp:'大阪観光局 / OSAKA-INFO', u:'https://www.osaka-info.jp/', c:'관광', d:[], s:'ok',
+     t:'오사카 공식 관광 포털. 휴관일과 이벤트 일정을 여기서 먼저 확인하세요.', k:'관광청 공식 포털 휴관일 osaka info'},
+    {n:'오사카성 천수각', jp:'大阪城天守閣', u:'https://www.osakacastle.net/', c:'관광', d:['D2'], s:'ok',
+     t:'개장 9시. 주유패스로 무료(정가 ¥600). 이른 시각이면 엘리베이터 줄보다 계단이 빠릅니다.', k:'오사카성 천수각 성 castle'},
+    {n:'우메다 스카이빌딩 공중정원', jp:'梅田スカイビル 空中庭園', u:'https://www.skybldg.co.jp/', c:'관광', d:['D2'], s:'ok',
+     t:'주유패스로 무료(정가 ¥2,000) — 패스에서 가장 비싼 항목. 173m 옥상이 뚫려 있어 1월엔 장갑 필수입니다.', k:'공중정원 스카이빌딩 전망대 우메다'},
+    {n:'HEP FIVE 관람차', jp:'ヘップファイブ', u:'https://www.hepfive.jp/', c:'관광', d:['D2'], s:'ok',
+     t:'주유패스로 무료(정가 ¥800). 15분 한 바퀴, 4인이 한 캐빈에 딱 맞습니다.', k:'헵파이브 관람차 빨간 우메다'},
+    {n:'시텐노지', jp:'四天王寺', u:'https://www.shitennoji.or.jp/', c:'관광', d:['D4'], s:'ok',
+     t:'일본에서 가장 오래된 관사 사찰. 경내는 무료, 중심가람만 ¥300입니다.', k:'시텐노지 사찰 절 텐노지'},
+    {n:'츠텐카쿠', jp:'通天閣', u:'https://www.tsutenkaku.co.jp/', c:'관광', d:['D4'], s:'ok',
+     t:'신세카이의 상징. 전망대 ¥1,000이 부담되면 아래 간판 골목만 걸어도 충분합니다.', k:'츠텐카쿠 신세카이 전망대'},
+    {n:'아베노 하루카스 300', jp:'あべのハルカス', u:'https://www.abenoharukas-300.jp/', c:'관광', d:['D4'], s:'ok',
+     t:'전망대는 ¥2,000. 16층 무료 옥상정원에서도 오사카가 내려다보여 4인 ¥8,000을 아낍니다.', k:'하루카스 전망대 텐노지 무료 16층'},
+    {n:'스파월드', jp:'スパワールド', u:'https://www.spaworld.co.jp/', c:'관광', d:['D4'], s:'ok',
+     t:'온천 ¥1,500. 걷느라 지친 다리 풀기용. 문신 규정을 미리 확인하세요.', k:'스파월드 온천 목욕 문신'},
+    {n:'기요미즈데라', jp:'清水寺', u:'https://www.kiyomizudera.or.jp/', c:'관광', d:['D3'], s:'ok',
+     t:'교토, ¥500. 10시 전 도착이 관건 — 산넨자카 돌계단은 오전 광선이 좋고 사람도 절반입니다.', k:'기요미즈데라 교토 청수사 산넨자카'},
+    {n:'후시미이나리 대사', jp:'伏見稲荷大社', u:'https://inari.jp/', c:'관광', d:['D3'], s:'ok',
+     t:'무료. 센본토리이. 정상 왕복 2시간이지만 요츠츠지 전망대까지 40분이면 충분합니다.', k:'후시미이나리 토리이 여우 신사 무료'},
+    {n:'교토 관광 공식', jp:'京都観光Navi', u:'https://ja.kyoto.travel/', c:'관광', d:['D3'], s:'ok',
+     t:'교토시 공식. Day 3 당일치기 동선을 짤 때 휴관일 확인용.', k:'교토 관광 공식 kyoto'},
+    {n:'도다이지', jp:'東大寺', u:'https://www.todaiji.or.jp/', c:'관광', d:['D3'], s:'ok',
+     t:'교토 대신 나라로 갈 경우. 사슴공원과 함께 반나절이면 끝납니다.', k:'나라 도다이지 사슴 대불 대안'},
+    {n:'일본정부관광국 (한국어)', jp:'JNTO', u:'https://www.japan.travel/ko/kr/', c:'관광', d:[], s:'ok',
+     t:'한국어 공식 관광 정보. 지역별 개요와 교통 패스 안내가 한글로 정리돼 있습니다.', k:'jnto 한국어 관광 일본정부'},
+
+    // ── 먹고 마시기 ──────────────────────────────────────
+    {n:'타베로그', jp:'食べログ', u:'https://tabelog.com/', c:'먹고마시기', d:[], s:'ok',
+     t:'일본 최대 맛집 리뷰. 출발 전 센베로 가게의 영업 여부를 여기서 반드시 확인하세요.', k:'타베로그 맛집 리뷰 평점 영업확인'},
+    {n:'타베로그 오사카', jp:'食べログ 大阪', u:'https://tabelog.com/osaka/', c:'먹고마시기', d:[], s:'ok',
+     t:'오사카 지역 페이지. 난바·닛폰바시·텐마로 지역을 좁혀 검색하세요.', k:'타베로그 오사카 난바 텐마 지역'},
+    {n:'구로몬 시장', jp:'黒門市場', u:'https://www.kuromon.com/', c:'먹고마시기', d:['D1','D5'], s:'blk',
+     t:'숙소 도보 5분. 16시 이후 회·초밥 할인, 18시면 대부분 닫습니다. 노점은 현금이 빠릅니다.', k:'구로몬 시장 회 초밥 낮술 현금'},
+    {n:'토리키조쿠', jp:'鳥貴族', u:'https://torikizoku.co.jp/', c:'먹고마시기', d:['D1','D3'], s:'ok',
+     t:'전 메뉴 균일가 야키토리. 4인 예약이 되고 실패 확률이 없어 센베로 첫 집으로 좋습니다.', k:'토리키조쿠 야키토리 균일가 센베로 우라난바'},
+    {n:'쿠시카츠 다루마', jp:'串カツだるま', u:'https://www.kushikatu-daruma.com/', c:'먹고마시기', d:['D4'], s:'ok',
+     t:'신세카이 쿠시카츠. 꼬치 1개 ¥130~200. 소스 두 번 찍기는 금지입니다.', k:'다루마 쿠시카츠 신세카이 소스'},
+    {n:'텐진바시스지 상점가', jp:'天神橋筋商店街', u:'https://www.tenjin123.com/', c:'먹고마시기', d:['D2'], s:'ok',
+     t:'텐마 센베로 구역. 일본에서 가장 긴 상점가 뒷골목에 1,000엔 세트 가게가 수십 곳입니다.', k:'텐마 텐진바시스지 센베로 상점가 성지'},
+    {n:'스시로', jp:'スシロー', u:'https://www.akindo-sushiro.co.jp/', c:'먹고마시기', d:['D4'], s:'ok',
+     t:'회전초밥. Day 4 저녁을 아끼려면 4인이 배부르게 먹어도 ¥6,000 안쪽입니다.', k:'스시로 회전초밥 저렴'},
+    {n:'쿠라스시', jp:'くら寿司', u:'https://www.kurasushi.co.jp/', c:'먹고마시기', d:['D4'], s:'ok',
+     t:'회전초밥. 1접시 ¥120대. 스시로와 같은 대안입니다.', k:'쿠라스시 회전초밥 저렴'},
+
+    // ── 쇼핑 · 브랜드 ────────────────────────────────────
+    {n:'COMME des GARÇONS', jp:'コム デ ギャルソン', u:'https://www.comme-des-garcons.com/', c:'쇼핑·브랜드', d:['D2','D4','D5'], s:'ok',
+     t:'콤데가르송 공식. 일본 내 유통가가 한국보다 낮고 면세분이 더해집니다.', k:'콤데가르송 꼼데가르송 comme garcons 브랜드'},
+    {n:'CdG 스토어 목록', jp:'STORES', u:'https://www.comme-des-garcons.com/stores/index.html', c:'쇼핑·브랜드', d:['D4','D5'], s:'ok',
+     t:'공식 매장 목록. 오사카 단독 매장은 이전·폐점이 잦으니 출발 전 여기서 주소를 확인하세요.', k:'콤데가르송 매장 스토어 오사카 주소 확인'},
+    {n:'ISSEY MIYAKE', jp:'イッセイ ミヤケ', u:'https://www.isseymiyake.com/', c:'쇼핑·브랜드', d:['D2','D4','D5'], s:'ok',
+     t:'이세이 미야케 공식. 일본 브랜드라 국내 정가와의 차이가 특히 큽니다.', k:'이세이미야케 issey miyake 브랜드'},
+    {n:'BAO BAO ISSEY MIYAKE', jp:'バオバオ', u:'https://www.isseymiyake.com/pages/baobao', c:'쇼핑·브랜드', d:['D2','D4','D5'], s:'ok',
+     t:'바오바오 라인 공식 페이지. 모델명과 색상을 미리 정해 두면 백화점에서 시간을 아낍니다.', k:'바오바오 baobao 가방 이세이미야케'},
+    {n:'다이마루 신사이바시점', jp:'大丸心斎橋店', u:'https://www.daimaru.co.jp/shinsaibashi/', c:'쇼핑·브랜드', d:['D4','D5'], s:'ok',
+     t:'숙소 도보권. 디자이너 층에 두 브랜드가 함께 있고 면세 카운터가 한 곳으로 통합돼 있습니다.', k:'다이마루 신사이바시 백화점 면세 카운터'},
+    {n:'한큐백화점', jp:'阪急百貨店', u:'https://www.hankyu-dept.co.jp/', c:'쇼핑·브랜드', d:['D2'], s:'ok',
+     t:'우메다 본점 전용 주소가 없어 대표 사이트로 연결됩니다 — 접속 후 우메다 본점을 선택하세요. 간사이에서 재고가 가장 깊습니다.', k:'한큐백화점 우메다 본점 디자이너'},
+    {n:'신사이바시 파르코', jp:'心斎橋PARCO', u:'https://shinsaibashi.parco.jp/', c:'쇼핑·브랜드', d:['D4','D5'], s:'ok',
+     t:'다이마루 본관 바로 옆. PLAY·BLACK 같은 하위 라인을 보기 좋습니다.', k:'파르코 신사이바시 parco 편집숍'},
+    {n:'허비스 PLAZA / ENT', jp:'ハービス', u:'https://www.herbis.jp/', c:'쇼핑·브랜드', d:['D2'], s:'ok',
+     t:'우메다 서쪽 럭셔리 구역. 한큐 본점에서 도보 10분이라 시간이 남을 때만.', k:'허비스 plaza ent 우메다 럭셔리'},
+    {n:'신사이바시스지 상점가', jp:'心斎橋筋商店街', u:'https://www.shinsaibashi.or.jp/', c:'쇼핑·브랜드', d:['D4','D5'], s:'ok',
+     t:'아케이드라 비가 와도 젖지 않습니다. 의류·화장품 구역.', k:'신사이바시 상점가 아케이드 쇼핑'},
+    {n:'돈키호테', jp:'ドン・キホーテ', u:'https://www.donki.com/', c:'쇼핑·브랜드', d:['D1','D5'], s:'ok',
+     t:'에비스타워점. Day 1엔 가격만 보고 Day 5에 몰아서 사세요. 짐이 되고 면세도 몰아야 유리합니다.', k:'돈키호테 돈키 면세 에비스타워'},
+
+    // ── 안전 · 행정 ──────────────────────────────────────
+    {n:'외교부 해외안전여행', jp:'', u:'https://www.0404.go.kr/', c:'안전·행정', d:[], s:'ok',
+     t:'여행경보와 영사콜센터. 출국 전 영사조력 연락처를 오프라인 저장해 두세요.', k:'외교부 해외안전여행 영사 0404 경보'},
+    {n:'주오사카 대한민국 총영사관', jp:'', u:'https://overseas.mofa.go.kr/jp-osaka-ko/index.do', c:'안전·행정', d:[], s:'ok',
+     t:'여권 분실 등 긴급 상황 시. 위치와 업무시간을 미리 확인해 두세요.', k:'총영사관 영사관 여권분실 긴급 오사카'},
+    {n:'일본 기상청', jp:'気象庁', u:'https://www.jma.go.jp/', c:'안전·행정', d:[], s:'ok',
+     t:'1월 오사카는 3~9℃, 강수가 적습니다. 출발 직전 주간예보 확인용.', k:'날씨 기상청 예보 기온 jma'},
+    {n:'일본 국세청', jp:'国税庁', u:'https://www.nta.go.jp/', c:'안전·행정', d:['D5'], s:'ok',
+     t:'소비세 면세 제도 원문. 2026년 11월 예정된 출국 시 환급 방식 전환 여부를 여기서 확인하세요.', k:'면세 소비세 국세청 환급 제도변경 tax free'},
+    {n:'관세청 (한국 입국)', jp:'', u:'https://www.customs.go.kr/', c:'안전·행정', d:['D5'], s:'ok',
+     t:'귀국 시 면세 한도와 자진신고. 브랜드 가방을 사면 한도를 넘길 수 있으니 미리 보세요.', k:'관세청 면세한도 자진신고 귀국 입국'},
+
+    // ── 우리 일정 ────────────────────────────────────────
+    {n:'오사카 4박 5일 플랜', jp:'', u:'./', c:'우리일정', d:[], s:'ok',
+     t:'본 일정표. 환율 계산기, 예산표, 준비물 체크리스트가 들어 있습니다.', k:'일정 플랜 본문 메인 계획'},
+    {n:'밤 — 센베로', jp:'せんべろ', u:'./#senbero', c:'우리일정', d:['D1','D2','D3','D4'], s:'ok',
+     t:'우라난바·구로몬·신세카이·텐마 네 구역의 가게 목록과 실전 규칙.', k:'센베로 술 이자카야 다치노미 우라난바 텐마'},
+    {n:'쇼핑 — 콤데가르송 · 바오바오', jp:'', u:'./#brand', c:'우리일정', d:['D2','D4','D5'], s:'ok',
+     t:'신사이바시·우메다 두 구역의 매장 정보와 면세 안내.', k:'쇼핑 브랜드 콤데가르송 바오바오 면세'},
+    {n:'예산 상세', jp:'', u:'./#budget', c:'우리일정', d:[], s:'ok',
+     t:'1인/4인 전환과 환율 연동 예산표. 상단에서 환율을 바꾸면 전부 다시 계산됩니다.', k:'예산 비용 환율 계산 총액'},
+    {n:'GitHub 저장소', jp:'', u:'https://github.com/cmhsong/osaka-2027', c:'우리일정', d:[], s:'ok',
+     t:'이 페이지들의 소스. 수정 이력이 남습니다.', k:'깃허브 github 저장소 소스'}
+  ];
+
+  var CHO = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+  function toCho(s){
+    var out = '';
+    for (var i = 0; i < s.length; i++){
+      var code = s.charCodeAt(i) - 0xAC00;
+      out += (code >= 0 && code <= 11171) ? CHO[Math.floor(code / 588)] : s[i];
+    }
+    return out;
+  }
+  function isChoOnly(s){ return /^[ㄱ-ㅎ]+$/.test(s); }
+  function host(u){
+    if (u.indexOf('./') === 0) return '이 사이트';
+    try { return u.replace(/^https?:\/\//,'').replace(/^www\./,'').split('/')[0]; } catch(e){ return u; }
+  }
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, function(m){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];
+    });
+  }
+  function hl(s, q){
+    if (!q) return esc(s);
+    var i = s.toLowerCase().indexOf(q);
+    if (i < 0) return esc(s);
+    return esc(s.slice(0, i)) + '<mark>' + esc(s.slice(i, i + q.length)) + '</mark>' + esc(s.slice(i + q.length));
+  }
+
+  DATA.forEach(function(x){
+    x._hay = [x.n, x.jp, x.t, x.k, x.c, x.u, (x.d || []).join(' ')].join(' ').toLowerCase();
+    x._cho = toCho(x.n + ' ' + x.k);
+  });
+
+  var CATS = [];
+  DATA.forEach(function(x){ if (CATS.indexOf(x.c) < 0) CATS.push(x.c); });
+
+  var qEl = document.getElementById('q'),
+      grid = document.getElementById('grid'),
+      countEl = document.getElementById('count'),
+      chipsEl = document.getElementById('chips'),
+      clearEl = document.getElementById('clear');
+  var cat = '전체';
+
+  var chipDefs = [{ label:'전체', n:DATA.length }].concat(CATS.map(function(c){
+    return { label:c, n:DATA.filter(function(x){ return x.c === c; }).length };
+  }));
+  chipsEl.innerHTML = chipDefs.map(function(c){
+    return '<button type="button" data-c="' + esc(c.label) + '" aria-pressed="' +
+           (c.label === '전체') + '">' + esc(c.label) +
+           '<span class="n">' + c.n + '</span></button>';
+  }).join('');
+  chipsEl.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if (!b) return;
+    cat = b.dataset.c;
+    [].forEach.call(chipsEl.children, function(x){
+      x.setAttribute('aria-pressed', x.dataset.c === cat);
+    });
+    render();
+  });
+
+  function render(){
+    var raw = qEl.value.trim();
+    var q = raw.toLowerCase();
+    var cho = isChoOnly(raw) ? raw : null;
+
+    clearEl.style.display = raw ? 'block' : 'none';
+
+    var out = DATA.filter(function(x){
+      if (cat !== '전체' && x.c !== cat) return false;
+      if (!q) return true;
+      return cho ? x._cho.indexOf(cho) >= 0 : x._hay.indexOf(q) >= 0;
+    });
+
+    countEl.innerHTML = '전체 <b>' + DATA.length + '</b>개 중 <b>' + out.length + '</b>개' +
+      (cat !== '전체' ? ' · ' + esc(cat) : '') +
+      (raw ? ' · “' + esc(raw) + '”' + (cho ? ' (초성)' : '') : '');
+
+    if (!out.length){
+      grid.innerHTML = '<div class="empty"><b>찾는 링크가 없습니다</b>' +
+        '다른 말로 검색하거나 분류를 «전체»로 바꿔 보세요.<br>' +
+        '<a href="https://www.google.com/search?q=' +
+        encodeURIComponent(raw + ' 오사카') + '" target="_blank" rel="noopener">구글에서 “' +
+        esc(raw) + ' 오사카” 검색 →</a></div>';
+      return;
+    }
+
+    grid.innerHTML = out.map(function(x){
+      var ext = x.u.indexOf('./') !== 0;
+      var days = (x.d || []).map(function(d){
+        return '<span class="badge day">' + d + '</span>';
+      }).join('');
+      return '<article class="card">' +
+        '<div class="ch">' +
+          '<a href="' + esc(x.u) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' +
+            hl(x.n, cho ? '' : q) + '</a>' +
+          '<span class="badge ' + (x.s === 'ok' ? 'ok">확인' : 'blk">차단') + '</span>' +
+          days +
+        '</div>' +
+        (x.jp ? '<div class="jp">' + esc(x.jp) + '</div>' : '') +
+        '<p class="cd">' + esc(x.t) + '</p>' +
+        '<div class="cf">' +
+          '<span class="badge cat">' + esc(x.c) + '</span>' +
+          '<span class="host">' + esc(host(x.u)) + '</span>' +
+          '<a class="gs" href="https://www.google.com/search?q=' +
+            encodeURIComponent(x.n + ' ' + (x.jp || '') + ' 公式') +
+            '" target="_blank" rel="noopener">검색</a>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  qEl.addEventListener('input', render);
+  clearEl.addEventListener('click', function(){ qEl.value = ''; qEl.focus(); render(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === '/' && document.activeElement !== qEl){ e.preventDefault(); qEl.focus(); qEl.select(); }
+    if (e.key === 'Escape' && document.activeElement === qEl){ qEl.value = ''; render(); }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
