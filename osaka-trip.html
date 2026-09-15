@@ -174,6 +174,24 @@ td .sub{display:block; font-size:.78rem; color:var(--ink-3); line-height:1.5}
 }
 .alt b{color:var(--ink); font-weight:500}
 
+/* ---------- inline jump link ---------- */
+.ln{
+  color:var(--accent-ink); font-weight:500; white-space:nowrap;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px;
+  text-decoration-color:var(--line-2);
+}
+.ln:hover{text-decoration-color:var(--accent)}
+.lead{color:var(--ink-2); font-size:.95rem; max-width:72ch; margin-bottom:22px}
+.spots{margin:0; padding:0; list-style:none; font-size:.89rem; color:var(--ink-2)}
+.spots li{padding:11px 0; border-bottom:1px dashed var(--line)}
+.spots li:first-child{padding-top:2px}
+.spots li:last-child{border-bottom:none; padding-bottom:0}
+.spots .nm{display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; color:var(--ink); font-weight:500}
+.spots .jp{font-size:.8rem; color:var(--ink-3); font-weight:400}
+.spots p{margin-top:3px; line-height:1.6}
+.panel h3 .tag{margin-left:8px; vertical-align:middle}
+:target{scroll-margin-top:72px}
+
 /* ---------- checklist ---------- */
 .cols2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:26px 40px}
 .panel{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px 22px 22px; box-shadow:var(--shadow)}
@@ -260,7 +278,7 @@ footer p+p{margin-top:6px}
       </div>
       <div class="rule">
         <h3><span class="no">05</span> 면세는 한 매장에 몰아서</h3>
-        <p>같은 날 같은 매장 <span class="cost" data-yen="5000">¥5,000</span> 이상이어야 면세. 돈키호테 에비스타워에서 4명 것을 한 번에 계산하세요. <b>여권 실물 필수.</b></p>
+        <p>같은 날 같은 매장 <span class="cost" data-yen="5000">¥5,000</span> 이상이어야 면세. 돈키호테 에비스타워에서 4명 것을 한 번에 계산하세요. <b>여권 실물 필수.</b> 단, 2026년 11월 예정된 제도 변경은 <a class="ln" href="#brand">별도 확인 필요 ↓</a></p>
       </div>
       <div class="rule">
         <h3><span class="no">06</span> 현금은 3만 엔만</h3>
@@ -354,7 +372,7 @@ footer p+p{margin-top:6px}
           <h3>도착, 그리고 곧장 도톤보리</h3>
           <div class="meta">1월 23일 토요일 · <span class="lineTag">난카이 공항선 → 미도스지선</span></div>
         </div>
-        <div class="dcost">1인 지출<span class="cost" data-yen="5470">¥5,470</span></div>
+        <div class="dcost">1인 지출<span class="cost" data-yen="6670">¥6,670</span></div>
       </div>
       <div class="tt">
         <div class="t">10:00</div>
@@ -367,13 +385,15 @@ footer p+p{margin-top:6px}
         <div class="c"><h4>숙소 짐 맡기기</h4><p>체크인은 15시지만 대부분 짐은 먼저 받아 줍니다. 바로 나가세요.</p></div>
         <div class="t">15:00</div>
         <div class="c"><h4>구로몬 시장 <span class="tag free">입장 무료</span></h4><p>참치회, 구운 가리비, 와규 꼬치, 딸기. 4명이 한 접시씩 나눠 먹으면 <span class="cost" data-yen="1500">¥1,500</span>로 배가 찹니다.
-          <span class="tip">16시 이후엔 회·초밥이 할인으로 나옵니다. 대신 18시면 대부분 닫으니 첫 코스로 넣었습니다.</span></p></div>
+          <span class="tip">16시 이후엔 회·초밥이 할인으로 나옵니다. 대신 18시면 대부분 닫으니 첫 코스로 넣었습니다. 여기서 생맥주 한 잔이면 그대로 낮 센베로입니다 — <a class="ln" href="#sb-kuromon">구로몬 낮술 ↓</a></span></p></div>
         <div class="t">17:00</div>
         <div class="c"><h4>도톤보리 · 호젠지 요코초 <span class="tag free">무료</span></h4><p>글리코 사인, 에비스바시 다리, 이끼 덮인 미즈카케 부동존. 해 지고 네온이 켜진 뒤가 이 동네의 본모습입니다.</p></div>
         <div class="t">18:30</div>
         <div class="c"><h4>첫 저녁 — 오코노미야키 또는 라멘</h4><p>미즈노·치보는 토요일 저녁 1시간 대기. 대기 없이 가려면 <b>킨류라멘</b>(24시간, 김치·부추 무한 리필)이나 <b>카무쿠라</b>가 낫습니다. 1인 <span class="cost" data-yen="1200">¥1,200</span> 선.</p></div>
         <div class="t">20:00</div>
         <div class="c"><h4>돈키호테 에비스타워</h4><p>가격 확인만 하고 <b>구매는 Day 5로 미루세요.</b> 짐이 되고, 어차피 면세는 한 번에 몰아야 유리합니다.</p></div>
+        <div class="t">21:00</div>
+        <div class="c"><h4>우라난바 센베로 <span class="tag">¥1,200</span></h4><p>숙소에서 도보 7분. 토요일 밤이라 붐비니 한 곳에 눌러앉지 말고 <b>20~30분씩 두 곳</b>만 도세요. 걸어서 돌아오니 막차 걱정이 없는 유일한 구역입니다. <a class="ln" href="#sb-uranamba">가게 목록 ↓</a></p></div>
       </div>
     </article>
 
@@ -401,10 +421,12 @@ footer p+p{margin-top:6px}
         <div class="t">16:00</div>
         <div class="c"><h4>헵파이브 관람차 <span class="tag pass">패스 무료 · 정가 ¥800</span></h4><p>15분 한 바퀴. 4인이 한 캐빈에 딱 맞습니다.
           <span class="tip">여기까지만 해도 ¥3,400 — 패스값 ¥3,500을 거의 회수했고 지하철은 덤입니다.</span></p></div>
+        <div class="t">16:30</div>
+        <div class="c"><h4>한큐 우메다 본점 — 콤데가르송 · 바오바오</h4><p>헵파이브에서 도보 5분, 전부 지하로 연결됩니다. <b>간사이에서 두 브랜드 재고가 가장 깊은 곳</b>이라 사이즈·라인을 여기서 확인해 두세요. 구매는 짐이 안 되는 Day 5가 낫습니다. <a class="ln" href="#br-umeda">매장 정보 ↓</a></p></div>
         <div class="t">17:30</div>
         <div class="c"><h4>화이티 우메다 지하상가</h4><p>추운 저녁을 지하로만 다닐 수 있는 동네입니다. 요도바시 우메다에서 전자제품 시세도 확인.</p></div>
         <div class="t">19:00</div>
-        <div class="c"><h4>저녁 <span class="tag">¥1,500</span></h4><p>지하상가 정식집이 지상보다 20% 쌉니다.</p></div>
+        <div class="c"><h4>텐마에서 저녁 겸 센베로 <span class="tag">¥1,500</span> <span class="tag pass">이동 패스 무료</span></h4><p>지하상가 정식집 대신 <b>일본 전국구 센베로 성지</b>로. 히가시우메다에서 다니마치선 2정거장이고, 돌아올 때도 오기마치 → 사카이스지선으로 <b>닛폰바시 직통</b>입니다. 왕복 교통비가 0원인 날은 오늘뿐입니다. <a class="ln" href="#sb-tenma">가게 목록 ↓</a></p></div>
       </div>
       <div class="alt"><b>패스로 더 태울 수 있다면</b> — 톰볼리 산타마리아 크루즈(정가 ¥1,800)나 우메다 스카이빌딩 대신 츠텐카쿠(¥1,000)를 넣어도 됩니다. 다만 겨울 일몰이 이르니 하루에 네 곳 이상은 무리입니다.</div>
     </article>
@@ -434,7 +456,7 @@ footer p+p{margin-top:6px}
         <div class="t">16:40</div>
         <div class="c"><h4>이나리역 → 교토역 → 오사카 <span class="tag">¥650</span></h4><p>JR 나라선 두 정거장. 돌아올 땐 우메다 환승이 번거로우면 JR 신쾌속으로 오사카역까지 한 번에.</p></div>
         <div class="t">19:00</div>
-        <div class="c"><h4>난바에서 저녁 <span class="tag">¥1,600</span></h4><p>교토 물가는 오사카보다 20% 비쌉니다. 저녁은 무조건 돌아와서.</p></div>
+        <div class="c"><h4>난바에서 저녁 <span class="tag">¥1,600</span></h4><p>교토 물가는 오사카보다 20% 비쌉니다. 저녁은 무조건 돌아와서. 하루 종일 걸어 지친 날이니, 저녁을 <b>우라난바에서 해결하면 그대로 센베로로 이어집니다</b> — 앉을 수 있는 토리키조쿠나 소노다로. <a class="ln" href="#sb-uranamba">가게 목록 ↓</a></p></div>
       </div>
       <div class="alt"><b>교토가 부담스럽다면</b> — <b>나라</b>는 킨테츠 오사카난바에서 왕복 <span class="cost" data-yen="1360">¥1,360</span>, 사슴공원·도다이지가 반나절이면 끝나 오후를 오사카에 쓸 수 있습니다. <b>고베</b>는 한큐 왕복 <span class="cost" data-yen="820">¥820</span>로 가장 싸고, 모자이크 항구 야경이 좋습니다.</div>
     </article>
@@ -455,14 +477,14 @@ footer p+p{margin-top:6px}
         <div class="t">11:00</div>
         <div class="c"><h4>신세카이 · 츠텐카쿠 <span class="tag">¥1,000</span></h4><p>1912년 파리 만국박람회를 흉내 내 지은 동네가 그대로 남았습니다. 전망대가 부담되면 아래에서 간판 골목만 걸어도 좋습니다.</p></div>
         <div class="t">12:00</div>
-        <div class="c"><h4>쿠시카츠 점심 <span class="tag">¥1,500</span></h4><p>다루마 본점 등. <b>소스 두 번 찍기 금지</b>가 이 동네 유일한 규칙입니다 — 양배추로 소스를 퍼서 뿌리세요.</p></div>
+        <div class="c"><h4>쿠시카츠 점심 · 낮술 <span class="tag">¥1,500</span></h4><p>다루마 본점 등. <b>소스 두 번 찍기 금지</b>가 이 동네 유일한 규칙입니다 — 양배추로 소스를 퍼서 뿌리세요. 신세카이는 낮부터 여는 다치노미가 많아 <b>낮술 구역으로 쓰기 좋습니다.</b> 다만 오늘 저녁은 제대로 쓰는 날이니 여기서 길게 끌지 마세요. <a class="ln" href="#sb-shinsekai">가게 목록 ↓</a></p></div>
         <div class="t">14:00</div>
         <div class="c"><h4>아베노 하루카스 16층 정원 <span class="tag free">무료</span></h4><p>전망대는 <span class="cost" data-yen="2000">¥2,000</span>. 16층 무료 옥상정원에서도 오사카가 충분히 내려다보입니다.
           <span class="tip">4인이면 여기서만 ¥8,000을 아낍니다 — 그 돈으로 오늘 저녁을 제대로 먹습니다.</span></p></div>
         <div class="t">15:30</div>
         <div class="c"><h4>텐노지 미오 · 큐즈몰</h4><p>또는 <b>스파월드</b>(<span class="cost" data-yen="1500">¥1,500</span>) 온천에서 걷느라 지친 다리 풀기. 문신 규정 확인 필요.</p></div>
         <div class="t">17:30</div>
-        <div class="c"><h4>아메리카무라 · 신사이바시스지</h4><p>중고 의류와 빈티지. 신사이바시 아케이드는 비가 와도 젖지 않습니다.</p></div>
+        <div class="c"><h4>아메리카무라 · 신사이바시스지 — 콤데가르송 · 바오바오</h4><p>중고 의류와 빈티지. 신사이바시 아케이드는 비가 와도 젖지 않습니다. <b>다이마루 신사이바시 본관과 파르코</b>가 바로 여기라 두 브랜드를 한 번에 볼 수 있습니다 — 오늘은 보기만 하고 <b>구매는 Day 5 오전</b>에. <a class="ln" href="#br-shinsaibashi">매장 정보 ↓</a></p></div>
         <div class="t">19:30</div>
         <div class="c"><h4>이 여행의 제대로 된 저녁 <span class="tag">¥3,000</span></h4><p>야키니쿠나 스시. 아껴 온 이유가 오늘입니다.
           <span class="tip">더 아끼려면 회전초밥(쿠라스시·스시로) 1접시 ¥120대 — 4인이 배부르게 먹어도 ¥6,000 안쪽입니다.</span></p></div>
@@ -487,9 +509,9 @@ footer p+p{margin-top:6px}
         <div class="t">09:00</div>
         <div class="c"><h4>드럭스토어 · 돈키호테 면세 쇼핑</h4><p><b>4명 것을 한 명 여권으로 한 번에 계산</b>하지 말고, 각자 여권으로 ¥5,000씩 채우는 편이 확실합니다. 소모품 면세분은 개봉 금지 봉투로 밀봉됩니다.</p></div>
         <div class="t">10:30</div>
-        <div class="c"><h4>덴덴타운 또는 신사이바시</h4><p>전자·피규어는 닛폰바시 덴덴타운, 의류·화장품은 신사이바시. 숙소에서 둘 다 도보권입니다.</p></div>
+        <div class="c"><h4>덴덴타운 또는 신사이바시 — 브랜드 구매</h4><p>전자·피규어는 닛폰바시 덴덴타운, 의류·화장품은 신사이바시. 숙소에서 둘 다 도보권입니다. <b>Day 4에 봐 둔 콤데가르송·바오바오를 사는 자리</b>입니다 — 다이마루 본관은 10시 개점이니 여기서 시간을 다 쓰세요. <a class="ln" href="#br-shinsaibashi">매장 정보 ↓</a></p></div>
         <div class="t">11:30</div>
-        <div class="c"><h4>구로몬 마지막 식사 <span class="tag">¥1,500</span></h4><p>첫날 눈에만 담아 둔 것을 먹는 자리로 남겨 뒀습니다.</p></div>
+        <div class="c"><h4>구로몬 마지막 식사 <span class="tag">¥1,500</span></h4><p>첫날 눈에만 담아 둔 것을 먹는 자리로 남겨 뒀습니다. 이 시간대는 아직 낮술 창(15시 이후)이 아니니 <b>먹는 데만</b> 쓰세요. <a class="ln" href="#sb-kuromon">구로몬 정보 ↓</a></p></div>
         <div class="t">12:40</div>
         <div class="c"><h4>난바 → 간사이공항 <span class="tag">¥970</span></h4><p>45분. 국제선은 <b>출발 2시간 전</b> 도착 기준으로 역산했습니다.</p></div>
         <div class="t">13:40</div>
@@ -498,6 +520,161 @@ footer p+p{margin-top:6px}
         <div class="c"><h4>간사이공항 출발 → 17:20 인천</h4><p>수요일 오후편은 주말편보다 1인 3~5만원 저렴합니다.</p></div>
       </div>
     </article>
+  </section>
+
+  <section id="senbero">
+    <div class="shead"><h2>밤 — 센베로</h2><span class="note">せんべろ · 1,000엔으로 기분 좋게 취하기</span></div>
+    <p class="lead">숙소가 닛폰바시라 오사카에서 센베로 입지는 최상급입니다. 아래 네 구역은 <b>일정의 저녁 칸에서 바로 연결</b>되어 있습니다 — 해당 시각 항목의 링크를 누르면 여기로 옵니다. 대부분 <b>저녁을 대신하는</b> 자리라 1인 석식 예산 <span class="cost" data-yen="2000">¥2,000</span> 안에서 해결됩니다.</p>
+    <div class="cols2">
+
+      <div class="panel" id="sb-uranamba">
+        <h3>우라난바 <span class="tag">도보 7분</span></h3>
+        <p style="font-size:.86rem; color:var(--ink-3); margin-bottom:12px">裏なんば · 난바센니치마에 동쪽 골목 — 오사카 센베로의 본진이자 숙소에서 가장 가까운 구역 <b style="color:var(--ink-2); font-weight:400">(Day 1 · Day 3)</b></p>
+        <ul class="spots">
+          <li>
+            <div class="nm">스탠드 소노다 <span class="jp">大衆食堂 スタンドそのだ</span> <span class="tag">1인 ¥1,200~1,800</span></div>
+            <p>우라난바 대표주자. 안주 대부분 ¥300~500, 술 ¥300 전후. 테이블석 있는 지점이면 4명도 앉습니다.</p>
+          </li>
+          <li>
+            <div class="nm">쇼민 <span class="jp">立ち呑み 庶民</span> <span class="tag">1인 ¥1,000</span></div>
+            <p>이름 그대로 서서 마시는 초저가. 안주 ¥100~300대가 즐비합니다. 4인 착석은 포기하세요.</p>
+          </li>
+          <li>
+            <div class="nm">토리키조쿠 <span class="jp">鳥貴族</span> <span class="tag">1인 ¥1,500~2,000</span></div>
+            <p>전 메뉴 균일가 야키토리 체인. <b>4인 예약이 되고 실패 확률이 0</b>입니다. 첫 집으로 깔고 가기 좋습니다.</p>
+          </li>
+          <li>
+            <div class="nm">쿠시카츠 다루마 계열 <span class="jp">串カツ だるま</span> <span class="tag">1인 ¥1,500</span></div>
+            <p>꼬치 1개 ¥130~200. 맥주를 곁들이면 그대로 센베로가 됩니다.</p>
+          </li>
+        </ul>
+        <span class="tip">4명이라 서서 마시는 집은 자리 잡기가 어렵습니다. 한 곳에 눌러앉기보다 <b>20~30분씩 두세 곳</b>을 도는 하시고자케(はしご酒)가 정답입니다.</span>
+      </div>
+
+      <div class="panel" id="sb-kuromon">
+        <h3>구로몬 시장 낮술 <span class="tag">도보 5분</span></h3>
+        <p style="font-size:.86rem; color:var(--ink-3); margin-bottom:12px">黒門市場 · 저녁엔 닫지만 <b style="color:var(--ink-2); font-weight:400">오후 3~5시가 진짜 (Day 1 · Day 5)</b></p>
+        <ul class="spots">
+          <li>
+            <div class="nm">시장 안 서서 먹기 <span class="tag">1인 ¥1,500</span></div>
+            <p>굴 1개 ¥300, 참치·성게 꼬치, 구운 가리비에 생맥주 ¥500. 점포 앞 스탠딩 테이블에서 바로 먹습니다. 사실상 낮 센베로입니다.</p>
+          </li>
+          <li>
+            <div class="nm">시간 규칙 <span class="tag">~18:00</span></div>
+            <p>대부분 18시면 닫고, <b>16시 이후 회·초밥이 할인</b>으로 나옵니다. 15:30~17:00 사이가 가격과 선택지가 동시에 좋은 유일한 창입니다.</p>
+          </li>
+          <li>
+            <div class="nm">결제 <span class="tag">현금</span></div>
+            <p>노점은 카드가 안 되는 곳이 아직 많습니다. 1인 ¥3,000 정도는 현금으로 들고 가세요.</p>
+          </li>
+        </ul>
+        <span class="tip">이미 Day 1·Day 5 일정에 들어가 있는 곳입니다 — 술만 한 잔 더하면 비용이 늘지 않습니다.</span>
+      </div>
+
+      <div class="panel" id="sb-shinsekai">
+        <h3>신세카이 · 도부츠엔마에 <span class="tag">지하철 5분</span></h3>
+        <p style="font-size:.86rem; color:var(--ink-3); margin-bottom:12px">新世界 · 사카이스지선 2정거장 (닛폰바시 → 에비스초) <b style="color:var(--ink-2); font-weight:400">(Day 4 낮)</b></p>
+        <ul class="spots">
+          <li>
+            <div class="nm">쿠시카츠 골목 + 낮술 <span class="tag">1인 ¥1,500</span></div>
+            <p>야에카츠·다루마 본점 등. <b>Day 4 점심이 이미 여기</b>라 생맥주 한 잔만 더하면 됩니다. 소스 두 번 찍기는 금지.</p>
+          </li>
+          <li>
+            <div class="nm">서서 마시는 집 <span class="tag">1인 ¥1,000</span></div>
+            <p>츠텐카쿠 아래 간판 골목에 낮부터 여는 다치노미가 여럿입니다. 오사카에서 가장 이른 시각에 술이 시작되는 동네입니다.</p>
+          </li>
+          <li>
+            <div class="nm">동선 주의 <span class="tag">범위</span></div>
+            <p><b>츠텐카쿠 반경 안에서만</b> 도세요. 신이마미야 방향으로 더 내려가면 분위기가 확 달라집니다. 위험하다기보다, 밤에 4명이 헤맬 동네는 아닙니다.</p>
+          </li>
+        </ul>
+        <span class="tip">Day 4 저녁은 야키니쿠·스시로 제대로 쓰는 날입니다. 신세카이는 <b>점심 겸 낮술</b>로만 쓰고 저녁까지 끌지 마세요.</span>
+      </div>
+
+      <div class="panel" id="sb-tenma">
+        <h3>텐마 <span class="tag">지하철 12분</span></h3>
+        <p style="font-size:.86rem; color:var(--ink-3); margin-bottom:12px">天満 · 일본 전국구 센베로 성지 <b style="color:var(--ink-2); font-weight:400">(Day 2 — 주유패스로 왕복 무료)</b></p>
+        <ul class="spots">
+          <li>
+            <div class="nm">텐진바시스지 뒷골목 <span class="tag">1인 ¥1,500</span></div>
+            <p>일본에서 가장 긴 상점가 뒤편에 <b>1,000엔 세트를 내건 집이 수십 곳</b>. 밀집도가 우라난바보다 훨씬 높아 4명 자리 찾기도 오히려 쉽습니다.</p>
+          </li>
+          <li>
+            <div class="nm">가는 길 <span class="tag pass">패스 무료</span></div>
+            <p>우메다(히가시우메다) → 다니마치선 → <b>텐진바시스지6초메</b> 2정거장. Day 2 우메다 일정에서 그대로 이어집니다.</p>
+          </li>
+          <li>
+            <div class="nm">돌아오는 길 <span class="tag pass">패스 무료</span></div>
+            <p>오기마치역 → 사카이스지선 → <b>닛폰바시 직통</b> 환승 없음. 주유패스는 첫 개찰이 아니라 <b>당일 자정까지</b> 유효하니 밤 이동까지 공짜입니다.</p>
+          </li>
+        </ul>
+        <span class="tip">4박 중 하룻밤을 작정하고 쓴다면 여기입니다. 교통비가 0원인 Day 2가 최적입니다.</span>
+      </div>
+
+    </div>
+    <div class="alt">
+      <b>센베로 실전 규칙</b> —
+      ① <b>오토시(お通し)</b>: 앉는 가게는 자릿세 겸 기본 안주 <span class="cost" data-yen="400">¥400</span> 안팎이 자동 청구됩니다. 거절할 수 없습니다. 서서 마시는 집은 대개 없습니다.
+      ② <b>현금</b>: 소규모 다치노미는 카드 불가가 아직 많습니다.
+      ③ <b>막차</b>: 텐마·신세카이는 24시 전후가 막차지만, <b>우라난바는 걸어서 돌아옵니다</b> — 늦어질 날은 우라난바로.
+      ④ <b>예산</b>: Day 2·Day 3은 저녁을 대신하므로 추가 비용이 없고, Day 1의 <span class="cost" data-yen="1200">¥1,200</span>만 예비비에서 나갑니다.
+      ⑤ <b>확인</b>: 개인 가게 정보는 2026년 5월 기준입니다. 소규모 점포는 폐업·이전이 잦으니 <b>출발 전 타베로그에서 영업 여부만 다시 확인</b>하세요. 체인(토리키조쿠·다루마)은 그럴 걱정이 없습니다.
+    </div>
+  </section>
+
+  <section id="brand">
+    <div class="shead"><h2>쇼핑 — 콤데가르송 · 바오바오</h2><span class="note">한국보다 싸게 사는 구역과 매장</span></div>
+    <p class="lead">두 브랜드 모두 <b>일본에서 사는 편이 확실히 유리</b>합니다. 바오바오는 이세이 미야케의 일본 브랜드라 국내 정가 대비 차이가 크고, 콤데가르송도 일본 내 유통가가 더 낮습니다. 여기에 면세분이 더해집니다. 아래 두 구역은 <b>Day 2 · Day 4 · Day 5 쇼핑 칸에서 연결</b>됩니다.</p>
+    <div class="cols2">
+
+      <div class="panel" id="br-shinsaibashi">
+        <h3>신사이바시 · 미나미셈바 <span class="tag">도보 12분</span></h3>
+        <p style="font-size:.86rem; color:var(--ink-3); margin-bottom:12px">心斎橋 · 숙소에서 걸어갑니다 <b style="color:var(--ink-2); font-weight:400">(Day 4 저녁 · Day 5 오전)</b></p>
+        <ul class="spots">
+          <li>
+            <div class="nm">다이마루 신사이바시점 본관 <span class="jp">大丸心斎橋店</span> <span class="tag">확실</span></div>
+            <p>디자이너 브랜드 층에 <b>콤데가르송</b>과 <b>이세이 미야케 계열</b>이 함께 들어가 있습니다. 백화점이라 위치가 바뀔 일이 없고, <b>면세 카운터가 한 곳으로 통합</b>돼 여러 매장 구매를 합산할 수 있습니다.</p>
+          </li>
+          <li>
+            <div class="nm">신사이바시 파르코 <span class="jp">心斎橋PARCO</span> <span class="tag">인접</span></div>
+            <p>다이마루 본관 바로 옆. 디자이너·스트리트 편집숍이 모여 있어 <b>PLAY·BLACK 같은 하위 라인</b>을 보기 좋습니다. 두 건물을 한 번에 도세요.</p>
+          </li>
+          <li>
+            <div class="nm">미나미셈바 · 호리에 편집숍 <span class="jp">南船場 · 堀江</span> <span class="tag">확인 필요</span></div>
+            <p>신사이바시 북쪽 골목에 독립 부티크와 편집숍이 흩어져 있습니다. <b>단독 매장은 이전·폐점이 잦으니</b> 출발 전 각 브랜드 공식 스토어 로케이터로 주소를 다시 확인하세요.</p>
+          </li>
+        </ul>
+        <span class="tip">Day 4 17:30 아메리카무라·신사이바시 일정과 Day 5 10:30 쇼핑 일정이 모두 이 구역입니다. <b>Day 4에 보고 Day 5에 사세요</b> — 짐을 하루라도 덜 듭니다.</span>
+      </div>
+
+      <div class="panel" id="br-umeda">
+        <h3>우메다 <span class="tag">Day 2 동선</span></h3>
+        <p style="font-size:.86rem; color:var(--ink-3); margin-bottom:12px">梅田 · 간사이에서 브랜드 재고가 가장 깊은 구역 <b style="color:var(--ink-2); font-weight:400">(Day 2 오후)</b></p>
+        <ul class="spots">
+          <li>
+            <div class="nm">한큐 우메다 본점 <span class="jp">阪急うめだ本店</span> <span class="tag">확실</span></div>
+            <p>간사이 최대 백화점. <b>디자이너 층에 콤데가르송·이세이 미야케가 모두</b> 들어갑니다. 사이즈와 라인 재고가 신사이바시보다 깊은 편이라, 찾는 모델이 정해져 있다면 여기가 1순위입니다.</p>
+          </li>
+          <li>
+            <div class="nm">허비스 PLAZA / ENT <span class="jp">ハービスPLAZA</span> <span class="tag">확인 필요</span></div>
+            <p>우메다 서쪽 럭셔리 구역. <b>이세이 미야케 계열 매장</b>이 들어가 있습니다. 한큐에서 도보 10분이라 시간이 남을 때만.</p>
+          </li>
+          <li>
+            <div class="nm">Day 2에 끼워 넣기 <span class="tag pass">이동 무료</span></div>
+            <p>Day 2 <b>16:00 헵파이브 → 17:30 화이티 우메다</b> 사이가 딱 비어 있습니다. 헵파이브에서 한큐 본점은 도보 5분, 전부 지하로 연결돼 추위에 노출되지 않습니다.</p>
+          </li>
+        </ul>
+        <span class="tip">Day 2에 <b>보기만</b> 하고 가격·재고를 적어 두세요. 실제 구매는 짐이 안 되는 Day 5가 낫습니다 — 다만 한큐 본점은 Day 5 동선에 없으니, 여기서만 파는 모델이면 그날 사야 합니다.</span>
+      </div>
+
+    </div>
+    <div class="alt">
+      <b>면세와 예산</b> —
+      ① <b>의류·가방은 일반물품</b>이라 소모품과 달리 <b>밀봉되지 않고 여행 중 사용해도 됩니다.</b> Day 5 항목의 밀봉 안내는 화장품·드럭스토어 물건에만 해당합니다.
+      ② <b>백화점 면세 카운터는 매장별 구매를 합산</b>해 줍니다. 여러 브랜드를 한 건물에서 사면 <span class="cost" data-yen="5000">¥5,000</span> 기준을 채우기 쉽습니다. <b>여권 실물 필수.</b>
+      ③ <b>제도 변경 확인</b>: 일본 면세 제도가 <b>2026년 11월부터 '출국 시 환급' 방식으로 바뀌는 것으로 발표</b>돼 있습니다. 2027년 1월 여행이면 매장에서 소비세를 포함해 결제하고 <b>간사이공항 출국장에서 환급</b>받는 흐름이 될 가능성이 큽니다. 시행 여부와 절차를 <b>출발 전 반드시 확인</b>하세요 — 공항에서 쓸 시간이 달라집니다.
+      ④ <b>예산</b>: 이 항목은 <b>예산표의 «쇼핑·예비비» <span class="cost" data-yen="15000">¥15,000</span>에 포함되지 않습니다.</b> 브랜드 구매는 별도 예산으로 잡으세요 — 바오바오 기본형 한 점만 해도 이 금액을 넘습니다.
+    </div>
   </section>
 
   <section>
@@ -557,6 +734,9 @@ footer p+p{margin-top:6px}
           <li><label><input type="checkbox" data-k="c8"><span>오사카 주유패스 1일권 사전 구매 (Day 2용)</span></label></li>
           <li><label><input type="checkbox" data-k="c9"><span>110V 변환 어댑터 · 보조배터리 (기내 반입만)</span></label></li>
           <li><label><input type="checkbox" data-k="c10"><span>상비약 · 립밤 (건조함)</span></label></li>
+          <li><label><input type="checkbox" data-k="c11"><span>센베로 가게 영업 여부 타베로그 확인 (Day 1 · 2)</span></label></li>
+          <li><label><input type="checkbox" data-k="c12"><span>콤데가르송 · 바오바오 공식 스토어 로케이터로 매장 확인</span></label></li>
+          <li><label><input type="checkbox" data-k="c13"><span>일본 면세 제도 변경(2026.11 예정) 시행 여부 확인</span></label></li>
         </ul>
       </div>
     </div>
@@ -565,6 +745,7 @@ footer p+p{margin-top:6px}
   <footer>
     <p>요금 기준: 오사카 주유패스 1일권 ¥3,500, 난카이 공항급행 ¥970 (2026년 공시 기준). 항공·숙박은 1월 하순 비수기 시세를 바탕으로 한 추정치이며 실제 예약가는 달라질 수 있습니다.</p>
     <p>환율 100엔 = 870원 (1엔 = 8.70원) 기준. 상단 입력란에서 환율을 바꾸면 엔화 항목의 원화 환산액이 모두 갱신됩니다.</p>
+    <p>센베로 가게와 브랜드 매장 정보는 2026년 5월 시점 기준입니다. 개인 점포와 단독 부티크는 폐업·이전이 잦고, 백화점 입점 브랜드도 층·구성이 바뀔 수 있습니다. 출발 전 타베로그와 각 브랜드 공식 스토어 로케이터로 다시 확인하세요. 「확실」로 표기한 곳은 백화점 본관 자체를 가리키며, 「확인 필요」는 구역만 확실하고 개별 매장은 검증이 필요하다는 뜻입니다.</p>
   </footer>
 </div>
 
