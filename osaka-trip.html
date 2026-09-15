@@ -182,6 +182,25 @@ td .sub{display:block; font-size:.78rem; color:var(--ink-3); line-height:1.5}
 }
 .ln:hover{text-decoration-color:var(--accent)}
 .lead{color:var(--ink-2); font-size:.95rem; max-width:72ch; margin-bottom:22px}
+
+/* ---------- section nav ---------- */
+html{scroll-behavior:smooth}
+.toc{display:flex; flex-wrap:wrap; align-items:center; gap:8px}
+.toc.top{margin-top:20px; padding-bottom:4px}
+.toc .lbl{
+  font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3); margin-right:2px;
+}
+.toc a{
+  font-size:.82rem; color:var(--ink-2); text-decoration:none; white-space:nowrap;
+  padding:5px 13px; border:1px solid var(--line); border-radius:999px; background:var(--card);
+}
+.toc a:hover{border-color:var(--line-2); color:var(--ink)}
+.toc a[aria-current="true"]{
+  background:var(--accent-soft); border-color:var(--accent); color:var(--accent-ink); font-weight:500;
+}
+.toc.days{margin:0 0 22px}
+.toc.days a{font-family:'IBM Plex Mono',monospace; font-size:.74rem; letter-spacing:.04em; padding:4px 11px}
 .spots{margin:0; padding:0; list-style:none; font-size:.89rem; color:var(--ink-2)}
 .spots li{padding:11px 0; border-bottom:1px dashed var(--line)}
 .spots li:first-child{padding-top:2px}
@@ -216,7 +235,10 @@ footer p+p{margin-top:6px}
   .dcost{margin-left:0; text-align:left}
   .mast{padding-top:40px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important; transition:none!important}
+  html{scroll-behavior:auto}
+}
 </style>
 
 <div class="wrap">
@@ -238,6 +260,18 @@ footer p+p{margin-top:6px}
     <span class="live">1엔 = <b id="perYen" class="mono">8.70원</b> · 4인 총액 <b id="liveTotal" class="mono">—</b></span>
   </div>
 
+  <nav class="toc top" id="toc" aria-label="섹션 바로가기">
+    <span class="lbl">바로가기</span>
+    <a href="#save">아끼는 결정</a>
+    <a href="#transit">교통</a>
+    <a href="#stay">숙소</a>
+    <a href="#plan">일정</a>
+    <a href="#senbero">센베로</a>
+    <a href="#brand">쇼핑 · 브랜드</a>
+    <a href="#budget">예산</a>
+    <a href="#prep">날씨 · 준비물</a>
+  </nav>
+
   <div class="tiles">
     <div class="tile hero">
       <div class="k">1인 총예산</div>
@@ -257,7 +291,7 @@ footer p+p{margin-top:6px}
   </div>
   <p class="tilenote">항공권과 보험은 원화로 결제하므로 환율을 바꿔도 고정입니다. 환율에 따라 움직이는 건 현지 엔화 지출뿐입니다.</p>
 
-  <section>
+  <section id="save">
     <div class="shead"><h2>돈을 아끼는 여섯 가지 결정</h2><span class="note">이 여섯 개가 1인 15만원 차이를 만듭니다</span></div>
     <div class="rules">
       <div class="rule">
@@ -287,7 +321,7 @@ footer p+p{margin-top:6px}
     </div>
   </section>
 
-  <section>
+  <section id="transit">
     <div class="shead"><h2>교통 — 무엇을 사고 무엇을 사지 않을까</h2><span class="note">전부 1인 기준</span></div>
     <div class="tblwrap">
       <table>
@@ -336,7 +370,7 @@ footer p+p{margin-top:6px}
     <div class="alt"><b>ICOCA 카드</b> — 간사이공항 역에서 발급. 보증금 ¥500(반납 시 환급)에 충전액 ¥2,000 정도면 5일 내내 충분합니다. 애플페이 사용자는 실물 없이 아이폰 지갑에 바로 발급하는 편이 빠릅니다.</div>
   </section>
 
-  <section>
+  <section id="stay">
     <div class="shead"><h2>숙소 — 왜 난바·닛폰바시인가</h2></div>
     <div class="cols2">
       <div class="panel">
@@ -361,11 +395,18 @@ footer p+p{margin-top:6px}
     </div>
   </section>
 
-  <section>
+  <section id="plan">
     <div class="shead"><h2>일정</h2><span class="note">시각은 여유 있게 잡았습니다 — 겨울 해가 17시 30분경 집니다</span></div>
+    <nav class="toc days" aria-label="날짜 바로가기">
+      <a href="#day1">DAY 1 · 도톤보리</a>
+      <a href="#day2">DAY 2 · 주유패스</a>
+      <a href="#day3">DAY 3 · 교토</a>
+      <a href="#day4">DAY 4 · 신세카이</a>
+      <a href="#day5">DAY 5 · 쇼핑 · 귀국</a>
+    </nav>
 
     <!-- DAY 1 -->
-    <article class="day" style="--rail:var(--l-nankai)">
+    <article class="day" id="day1" style="--rail:var(--l-nankai)">
       <div class="dhead">
         <div class="dnum">DAY 1</div>
         <div class="dtitle">
@@ -398,7 +439,7 @@ footer p+p{margin-top:6px}
     </article>
 
     <!-- DAY 2 -->
-    <article class="day" style="--rail:var(--l-mido)">
+    <article class="day" id="day2" style="--rail:var(--l-mido)">
       <div class="dhead">
         <div class="dnum">DAY 2</div>
         <div class="dtitle">
@@ -432,7 +473,7 @@ footer p+p{margin-top:6px}
     </article>
 
     <!-- DAY 3 -->
-    <article class="day" style="--rail:var(--l-hankyu)">
+    <article class="day" id="day3" style="--rail:var(--l-hankyu)">
       <div class="dhead">
         <div class="dnum">DAY 3</div>
         <div class="dtitle">
@@ -462,7 +503,7 @@ footer p+p{margin-top:6px}
     </article>
 
     <!-- DAY 4 -->
-    <article class="day" style="--rail:var(--l-sakai)">
+    <article class="day" id="day4" style="--rail:var(--l-sakai)">
       <div class="dhead">
         <div class="dnum">DAY 4</div>
         <div class="dtitle">
@@ -494,7 +535,7 @@ footer p+p{margin-top:6px}
     </article>
 
     <!-- DAY 5 -->
-    <article class="day" style="--rail:var(--l-nankai)">
+    <article class="day" id="day5" style="--rail:var(--l-nankai)">
       <div class="dhead">
         <div class="dnum">DAY 5</div>
         <div class="dtitle">
@@ -677,7 +718,7 @@ footer p+p{margin-top:6px}
     </div>
   </section>
 
-  <section>
+  <section id="budget">
     <div class="shead">
       <h2>예산 상세</h2>
       <span class="note">100엔 = <span id="rateEcho" class="mono">870</span>원 기준</span>
@@ -689,7 +730,7 @@ footer p+p{margin-top:6px}
       </span>
     </div>
     <div class="tblwrap">
-      <table id="budget">
+      <table id="budgetTbl">
         <thead>
           <tr><th>항목</th><th>산출 근거</th><th class="num">엔화</th><th class="num">원화</th></tr>
         </thead>
@@ -708,7 +749,7 @@ footer p+p{margin-top:6px}
     <div class="alt"><b>더 줄인다면 1인 약 72만원</b> — 쇼핑·예비비를 <span class="cost" data-yen="6000">¥6,000</span>로 낮추고, 숙소를 텐노지(1박 <span class="cost" data-yen="18000">¥18,000</span>)로 바꾸면 됩니다. <b>반대로 유니버설 스튜디오</b>를 하루 넣으면 티켓만 1인 <span class="cost" data-yen="9000">¥9,000</span> 이상이라 총액이 12만원쯤 오릅니다 — 이 계획에서 뺀 이유입니다.</div>
   </section>
 
-  <section>
+  <section id="prep">
     <div class="shead"><h2>1월 오사카, 그리고 챙길 것</h2></div>
     <div class="cols2">
       <div class="panel">
@@ -772,7 +813,7 @@ footer p+p{margin-top:6px}
   });
 
   // budget table
-  var rows = [].slice.call(document.querySelectorAll('#budget tbody tr[data-yen], #budget tbody tr[data-krw]'));
+  var rows = [].slice.call(document.querySelectorAll('#budgetTbl tbody tr[data-yen], #budgetTbl tbody tr[data-krw]'));
   var totYen = document.getElementById('totYen'), totKrw = document.getElementById('totKrw');
   var totLabel = document.getElementById('totLabel');
 
@@ -818,6 +859,29 @@ footer p+p{margin-top:6px}
   }
   bp.addEventListener('click', function(){ setMult(1); });
   ba.addEventListener('click', function(){ setMult(4); });
+
+  // section nav — mark the section currently in view
+  (function(){
+    var links = [].slice.call(document.querySelectorAll('#toc a'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var map = {}, targets = [];
+    links.forEach(function(a){
+      var el = document.getElementById(a.getAttribute('href').slice(1));
+      if (el){ map[el.id] = a; targets.push(el); }
+    });
+    var seen = {};
+    function paint(){
+      var cur = null;
+      targets.forEach(function(el){ if (seen[el.id]) cur = cur || el.id; });
+      links.forEach(function(a){ a.removeAttribute('aria-current'); });
+      if (cur && map[cur]) map[cur].setAttribute('aria-current', 'true');
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ seen[e.target.id] = e.isIntersecting; });
+      paint();
+    }, { rootMargin: '-72px 0px -55% 0px' });
+    targets.forEach(function(el){ io.observe(el); });
+  })();
 
   // checklist persistence
   var boxes = [].slice.call(document.querySelectorAll('#checklist input[type=checkbox]'));
